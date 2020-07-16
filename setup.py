@@ -84,14 +84,14 @@ if is_travis_deploy() and is_tagged_commit():
 setup_kwargs: Dict[str, Any] = dict()
 setup_kwargs['name'] = 'pct_python_default_test'
 setup_kwargs['version'] = '0.1.0'
-setup_kwargs['url'] = 'https://github.com/your_github_account/pct_python_default_test'
+setup_kwargs['url'] = 'https://github.com/bitranox/pct_python_default_test'
 setup_kwargs['packages'] = find_packages()
-setup_kwargs['package_data'] = {'pct_python_default_test': []}
+setup_kwargs['package_data'] = {'pct_python_default_test': ['py.typed', '*.pyi', '__init__.pyi']}
 setup_kwargs['description'] = 'a pizzacutter default test project, crated with PizzaCutter and the PizzaCutter default python template'
 setup_kwargs['long_description'] = long_description
 setup_kwargs['long_description_content_type'] = 'text/x-rst'
-setup_kwargs['author'] = 'put Your Name here'
-setup_kwargs['author_email'] = 'some_email_address@gmail.com'
+setup_kwargs['author'] = 'Robert Nowotny'
+setup_kwargs['author_email'] = 'bitranox@gmail.com'
 setup_kwargs['classifiers'] = ['Development Status :: 5 - Production/Stable', 'Intended Audience :: Developers', 'License :: OSI Approved :: MIT License', 'Natural Language :: English', 'Operating System :: OS Independent', 'Programming Language :: Python', 'Topic :: Software Development :: Libraries :: Python Modules']
 setup_kwargs['entry_points'] = {'console_scripts': ['pct_python_default_test = pct_python_default_test.pct_python_default_test_cli:cli_main']}
 # minimally needs to run tests - no project requirements here

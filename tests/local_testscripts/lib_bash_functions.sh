@@ -20,6 +20,8 @@ cd "$own_dir"||exit
 # shellcheck disable=SC2155
 export PYTHONPATH="$(python3 ./testing_tools.py append_directory_to_python_path "${project_root_dir}")"
 # following lines are not only a comment, they get actually replaced
+export PYTHONPATH="$(python3 ./testing_tools.py append_directory_to_python_path "/media/srv-main-softdev/rotek-apps/lib")"
+export MYPYPATH="$(python3 ./testing_tools.py append_immediate_subdirs_to_mypy_path "/media/srv-main-softdev/rotek-apps/lib/bitranox")"
 cd "$save_dir"||exit
 
 function install_or_update_lib_bash() {
