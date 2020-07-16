@@ -119,6 +119,7 @@ install:
           ${lib_bash_banner} "installing lib_log_utils"; ${cPREFIX} ${cPIP} install lib_log_utils;
       fi
     - ${cPREFIX} log_util --level NOTICE --banner "log util active"
+    - ${cPREFIX} log_util --colortest
     - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/001_000_install_wine.sh ; fi
     - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/002_000_install_wine_machine.sh ; fi
     - if [[ ${wine_python_version} == "python3" ]]; then ${lib_bash_wine}/003_000_install_wine_python3_preinstalled.sh ; fi
@@ -133,7 +134,7 @@ script:
     - if ${COMMAND}; then ${lib_bash_banner} "'${COMMAND}' - OK"; else ${lib_bash_banner_warning} "'${COMMAND}' - FAILED" && exit 1; fi
 
     # pip install git+https://github.com/bitranox/pct_python_default_test.git --install-option test
-    - ${cPREFIX} log_util --level NOTICE --banner "TRAVIS_TAG ${TRAVIS_TAG} TRAVIS_BRANCH ${TRAVIS_BRANCH} TRAVIS_PULL_REQUEST_BRANCH $TRAVIS_PULL_REQUEST_BRANCH "
+    - ${cPREFIX} log_util --level SUCCESS --banner "TRAVIS_TAG ${TRAVIS_TAG} TRAVIS_BRANCH ${TRAVIS_BRANCH} TRAVIS_PULL_REQUEST_BRANCH $TRAVIS_PULL_REQUEST_BRANCH "
     - COMMAND="${cPREFIX} ${cPIP} install git+https://github.com/bitranox/pct_python_default_test.git@master --install-option test"
     - ${lib_bash_banner} "running '${COMMAND}'"
     - if ${COMMAND}; then ${lib_bash_banner} "'${COMMAND}' - OK"; else ${lib_bash_banner_warning} "'${COMMAND}' - FAILED" && exit 1; fi
