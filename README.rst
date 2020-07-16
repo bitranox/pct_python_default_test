@@ -1,0 +1,228 @@
+pct_python_default_test
+=======================
+
+|travis_build| |license|
+
+|codecov| |better_code| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
+
+
+.. |travis_build| image:: https://img.shields.io/travis/your_github_account/pct_python_default_test/master.svg
+   :target: https://travis-ci.org/your_github_account/pct_python_default_test
+
+.. |license| image:: https://img.shields.io/github/license/webcomics/pywine.svg
+   :target: http://en.wikipedia.org/wiki/MIT_License
+
+.. |jupyter| image:: https://mybinder.org/badge_logo.svg
+ :target: https://mybinder.org/v2/gh/your_github_account/pct_python_default_test/master?filepath=pct_python_default_test.ipynb
+
+.. for the pypi status link note the dashes, not the underscore !
+.. |pypi| image:: https://img.shields.io/pypi/status/pct-python-default-test?label=PyPI%20Package
+   :target: https://badge.fury.io/py/pct_python_default_test
+
+.. |codecov| image:: https://img.shields.io/codecov/c/github/your_github_account/pct_python_default_test
+   :target: https://codecov.io/gh/your_github_account/pct_python_default_test
+
+.. |better_code| image:: https://bettercodehub.com/edge/badge/your_github_account/pct_python_default_test?branch=master
+   :target: https://bettercodehub.com/results/your_github_account/pct_python_default_test
+
+.. |cc_maintain| image:: https://img.shields.io/codeclimate/maintainability-percentage/your_github_account/pct_python_default_test?label=CC%20maintainability
+   :target: https://codeclimate.com/github/your_github_account/pct_python_default_test/maintainability
+   :alt: Maintainability
+
+.. |cc_issues| image:: https://img.shields.io/codeclimate/issues/your_github_account/pct_python_default_test?label=CC%20issues
+   :target: https://codeclimate.com/github/your_github_account/pct_python_default_test/maintainability
+   :alt: Maintainability
+
+.. |cc_coverage| image:: https://img.shields.io/codeclimate/coverage/your_github_account/pct_python_default_test?label=CC%20coverage
+   :target: https://codeclimate.com/github/your_github_account/pct_python_default_test/test_coverage
+   :alt: Code Coverage
+
+.. |snyk| image:: https://img.shields.io/snyk/vulnerabilities/github/your_github_account/pct_python_default_test
+   :target: https://snyk.io/test/github/your_github_account/pct_python_default_test
+
+This is the test project created using PizzaCutter
+
+PizzaCutter is a command-line utility that creates and updates software projects in any language from PizzaCutter project templates.
+
+The purpose of this repository is, to show and test a newly created project from the python default template.
+
+
+More Information can be found here :
+    - `PizzaCutter <https://github.com/bitranox/PizzaCutter>`_
+    - `PizzaCutter python default template <https://github.com/bitranox/pct_python_default>`_
+    - more templates to come
+
+----
+
+automated tests, Travis Matrix, Documentation, Badges, etc. are managed with `PizzaCutter <https://github
+.com/bitranox/PizzaCutter>`_ (cookiecutter on steroids)
+
+Python version required: 3.6.0 or newer
+
+tested on linux "bionic" with python 3.6, 3.7, 3.8, 3.8-dev, pypy3
+
+`100% code coverage <https://codecov.io/gh/your_github_account/pct_python_default_test>`_, codestyle checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://travis-ci.org/your_github_account/pct_python_default_test>`_, automatic daily builds and monitoring
+
+----
+
+- `Installation and Upgrade`_
+- `Usage`_
+- `Usage from Commandline`_
+- `Requirements`_
+- `Acknowledgements`_
+- `Contribute`_
+- `Report Issues <https://github.com/your_github_account/pct_python_default_test/blob/master/ISSUE_TEMPLATE.md>`_
+- `Pull Request <https://github.com/your_github_account/pct_python_default_test/blob/master/PULL_REQUEST_TEMPLATE.md>`_
+- `Code of Conduct <https://github.com/your_github_account/pct_python_default_test/blob/master/CODE_OF_CONDUCT.md>`_
+- `License`_
+- `Changelog`_
+
+----
+
+
+
+Installation and Upgrade
+------------------------
+
+- Before You start, its highly recommended to update pip and setup tools:
+
+
+.. code-block:: bash
+
+    python -m pip --upgrade pip
+    python -m pip --upgrade setuptools
+    python -m pip --upgrade wheel
+
+
+
+- to install the latest development version from github via pip:
+
+
+.. code-block:: bash
+
+    # normal install
+    python -m pip install --upgrade git+https://github.com/your_github_account/pct_python_default_test.git
+
+    # to test without installing (can be skipped)
+    python -m pip install git+https://github.com/your_github_account/pct_python_default_test.git --install-option test
+
+    # to install and upgrade all dependencies regardless of version number
+    python -m pip install --upgrade git+https://github.com/your_github_account/pct_python_default_test.git --upgrade-strategy eager
+
+
+- include it into Your requirements.txt:
+
+.. code-block:: bash
+
+    # Insert following line in Your requirements.txt:
+    # for the latest development version :
+    pct_python_default_test @ git+https://github.com/your_github_account/pct_python_default_test.git
+
+    # to install and upgrade all modules mentioned in requirements.txt:
+    python -m pip install --upgrade -r /<path>/requirements.txt
+
+
+
+- to install the latest development version from source code:
+
+.. code-block:: bash
+
+    # cd ~
+    $ git clone https://github.com/your_github_account/pct_python_default_test.git
+    $ cd pct_python_default_test
+
+    # to test without installing (can be skipped)
+    python setup.py test
+
+    # normal install
+    python setup.py install
+
+- via makefile:
+  makefiles are a very convenient way to install. Here we can do much more,
+  like installing virtual environments, clean caches and so on.
+
+.. code-block:: shell
+
+    # from Your shell's homedirectory:
+    $ git clone https://github.com/your_github_account/pct_python_default_test.git
+    $ cd pct_python_default_test
+
+    # to run the tests:
+    $ make test
+
+    # to install the package
+    $ make install
+
+    # to clean the package
+    $ make clean
+
+    # uninstall the package
+    $ make uninstall
+
+Usage
+-----------
+
+.. code-block::
+
+    import the module and check the code - its easy and documented there, including doctest examples.
+    in case of any questions the usage section might be expanded at a later time
+
+Usage from Commandline
+------------------------
+
+.. code-block:: bash
+
+   Usage: pct_python_default_test [OPTIONS] COMMAND [ARGS]...
+
+     a pizzacutter default test project, crated with PizzaCutter and the
+     PizzaCutter default python template
+
+   Options:
+     --version                     Show the version and exit.
+     --traceback / --no-traceback  return traceback information on cli
+     -h, --help                    Show this message and exit.
+
+   Commands:
+     info  get program informations
+
+Requirements
+------------
+following modules will be automatically installed :
+
+.. code-block:: bash
+
+    ## Project Requirements
+    click
+
+Acknowledgements
+----------------
+
+- special thanks to "uncle bob" Robert C. Martin, especially for his books on "clean code" and "clean architecture"
+
+Contribute
+----------
+
+I would love for you to fork and send me pull request for this project.
+- `please Contribute <https://github.com/your_github_account/pct_python_default_test/blob/master/CONTRIBUTING.md>`_
+
+License
+-------
+
+This software is licensed under the `MIT license <http://en.wikipedia.org/wiki/MIT_License>`_
+
+---
+
+Changelog
+=========
+
+- new MAJOR version for incompatible API changes,
+- new MINOR version for added functionality in a backwards compatible manner
+- new PATCH version for backwards compatible bug fixes
+
+0.0.1
+-----
+YYYY-MM-DD: <some release name>
+    - change1
+    - change2
+    - ...
+
