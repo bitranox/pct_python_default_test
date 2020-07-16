@@ -133,7 +133,7 @@ script:
     - if ${COMMAND}; then ${lib_bash_banner} "'${COMMAND}' - OK"; else ${lib_bash_banner_warning} "'${COMMAND}' - FAILED" && exit 1; fi
 
     # pip install git+https://github.com/bitranox/pct_python_default_test.git --install-option test
-    - ${cPREFIX} log_util --level NOTICE --banner "TRAVIS_BRANCH : ${TRAVIS_BRANCH} TRAVIS_TAG: ${TRAVIS_TAG}  TRAVIS_PULL_REQUEST_BRANCH : ${TRAVIS_PULL_REQUEST_BRANCH}"
+    - ${cPREFIX} log_util --level NOTICE --banner "TRAVIS_TAG ${TRAVIS_TAG} TRAVIS_BRANCH ${TRAVIS_BRANCH} TRAVIS_PULL_REQUEST_BRANCH $TRAVIS_PULL_REQUEST_BRANCH "
     - COMMAND="${cPREFIX} ${cPIP} install git+https://github.com/bitranox/pct_python_default_test.git@master --install-option test"
     - ${lib_bash_banner} "running '${COMMAND}'"
     - if ${COMMAND}; then ${lib_bash_banner} "'${COMMAND}' - OK"; else ${lib_bash_banner_warning} "'${COMMAND}' - FAILED" && exit 1; fi
