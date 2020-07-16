@@ -64,7 +64,7 @@ matrix:
       before_install:
           - export mypy_strict_typecheck="True"
           - export build_docs="True"
-          - export deploy_on_pypi="False"
+          - export deploy_on_pypi="True"
 
 
     - os: linux
@@ -129,13 +129,13 @@ script:
     - ${lib_bash_banner} "running '${COMMAND}'"
     - if ${COMMAND}; then ${lib_bash_banner} "'${COMMAND}' - OK"; else ${lib_bash_banner_warning} "'${COMMAND}' - FAILED" && exit 1; fi
 
-    # pip install git+https://github.com/your_github_account/pct_python_default_test.git --install-option test
-    - COMMAND="${cPREFIX} ${cPIP} install git+https://github.com/your_github_account/pct_python_default_test.git --install-option test"
+    # pip install git+https://github.com/bitranox/pct_python_default_test.git --install-option test
+    - COMMAND="${cPREFIX} ${cPIP} install git+https://github.com/bitranox/pct_python_default_test.git --install-option test"
     - ${lib_bash_banner} "running '${COMMAND}'"
     - if ${COMMAND}; then ${lib_bash_banner} "'${COMMAND}' - OK"; else ${lib_bash_banner_warning} "'${COMMAND}' - FAILED" && exit 1; fi
 
-    # pip install git+https://github.com/your_github_account/pct_python_default_test.git
-    - COMMAND="${cPREFIX} ${cPIP} install git+https://github.com/your_github_account/pct_python_default_test.git"
+    # pip install git+https://github.com/bitranox/pct_python_default_test.git
+    - COMMAND="${cPREFIX} ${cPIP} install git+https://github.com/bitranox/pct_python_default_test.git"
     - ${lib_bash_banner} "running '${COMMAND}'"
     - if ${COMMAND}; then ${lib_bash_banner} "'${COMMAND}' - OK"; else ${lib_bash_banner_warning} "'${COMMAND}' - FAILED" && exit 1; fi
 
@@ -216,12 +216,12 @@ after_success:
           ${cPREFIX} ${cPIP} install wheel;
           ${cPREFIX} ${cPYTHON} setup.py sdist bdist_wheel;
           ${cPREFIX} twine check dist/*;
-          ${cPREFIX} twine upload --repository-url https://upload.pypi.org/legacy/ -u your_pypi_account -p ${pypi_password} dist/*;
+          ${cPREFIX} twine upload --repository-url https://upload.pypi.org/legacy/ -u bitranox -p ${pypi_password} dist/*;
       fi
 
 notifications:
   email:
     recipients:
-        - some_email_address@gmail.com
+        - bitranox@gmail.com
     on_success: never # default: change
     on_failure: always # default: always

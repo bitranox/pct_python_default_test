@@ -5,7 +5,7 @@
 .. code-block:: shell
 
     # from Your shell's homedirectory:
-    $ git clone https://github.com/your_github_account/pct_python_default_test.git
+    $ git clone https://github.com/bitranox/pct_python_default_test.git
     $ cd pct_python_default_test
 
     # to run the tests:

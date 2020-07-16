@@ -1,44 +1,44 @@
 pct_python_default_test
 =======================
 
-|travis_build| |license|
+|travis_build| |license| |jupyter| |pypi|
 
 |codecov| |better_code| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
 
 
-.. |travis_build| image:: https://img.shields.io/travis/your_github_account/pct_python_default_test/master.svg
-   :target: https://travis-ci.org/your_github_account/pct_python_default_test
+.. |travis_build| image:: https://img.shields.io/travis/bitranox/pct_python_default_test/master.svg
+   :target: https://travis-ci.org/bitranox/pct_python_default_test
 
 .. |license| image:: https://img.shields.io/github/license/webcomics/pywine.svg
    :target: http://en.wikipedia.org/wiki/MIT_License
 
 .. |jupyter| image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/your_github_account/pct_python_default_test/master?filepath=pct_python_default_test.ipynb
+ :target: https://mybinder.org/v2/gh/bitranox/pct_python_default_test/master?filepath=pct_python_default_test.ipynb
 
 .. for the pypi status link note the dashes, not the underscore !
 .. |pypi| image:: https://img.shields.io/pypi/status/pct-python-default-test?label=PyPI%20Package
    :target: https://badge.fury.io/py/pct_python_default_test
 
-.. |codecov| image:: https://img.shields.io/codecov/c/github/your_github_account/pct_python_default_test
-   :target: https://codecov.io/gh/your_github_account/pct_python_default_test
+.. |codecov| image:: https://img.shields.io/codecov/c/github/bitranox/pct_python_default_test
+   :target: https://codecov.io/gh/bitranox/pct_python_default_test
 
-.. |better_code| image:: https://bettercodehub.com/edge/badge/your_github_account/pct_python_default_test?branch=master
-   :target: https://bettercodehub.com/results/your_github_account/pct_python_default_test
+.. |better_code| image:: https://bettercodehub.com/edge/badge/bitranox/pct_python_default_test?branch=master
+   :target: https://bettercodehub.com/results/bitranox/pct_python_default_test
 
-.. |cc_maintain| image:: https://img.shields.io/codeclimate/maintainability-percentage/your_github_account/pct_python_default_test?label=CC%20maintainability
-   :target: https://codeclimate.com/github/your_github_account/pct_python_default_test/maintainability
+.. |cc_maintain| image:: https://img.shields.io/codeclimate/maintainability-percentage/bitranox/pct_python_default_test?label=CC%20maintainability
+   :target: https://codeclimate.com/github/bitranox/pct_python_default_test/maintainability
    :alt: Maintainability
 
-.. |cc_issues| image:: https://img.shields.io/codeclimate/issues/your_github_account/pct_python_default_test?label=CC%20issues
-   :target: https://codeclimate.com/github/your_github_account/pct_python_default_test/maintainability
+.. |cc_issues| image:: https://img.shields.io/codeclimate/issues/bitranox/pct_python_default_test?label=CC%20issues
+   :target: https://codeclimate.com/github/bitranox/pct_python_default_test/maintainability
    :alt: Maintainability
 
-.. |cc_coverage| image:: https://img.shields.io/codeclimate/coverage/your_github_account/pct_python_default_test?label=CC%20coverage
-   :target: https://codeclimate.com/github/your_github_account/pct_python_default_test/test_coverage
+.. |cc_coverage| image:: https://img.shields.io/codeclimate/coverage/bitranox/pct_python_default_test?label=CC%20coverage
+   :target: https://codeclimate.com/github/bitranox/pct_python_default_test/test_coverage
    :alt: Code Coverage
 
-.. |snyk| image:: https://img.shields.io/snyk/vulnerabilities/github/your_github_account/pct_python_default_test
-   :target: https://snyk.io/test/github/your_github_account/pct_python_default_test
+.. |snyk| image:: https://img.shields.io/snyk/vulnerabilities/github/bitranox/pct_python_default_test
+   :target: https://snyk.io/test/github/bitranox/pct_python_default_test
 
 This is the test project created using PizzaCutter
 
@@ -61,25 +61,30 @@ Python version required: 3.6.0 or newer
 
 tested on linux "bionic" with python 3.6, 3.7, 3.8, 3.8-dev, pypy3
 
-`100% code coverage <https://codecov.io/gh/your_github_account/pct_python_default_test>`_, codestyle checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://travis-ci.org/your_github_account/pct_python_default_test>`_, automatic daily builds and monitoring
+`100% code coverage <https://codecov.io/gh/bitranox/pct_python_default_test>`_, codestyle checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://travis-ci.org/bitranox/pct_python_default_test>`_, automatic daily builds and monitoring
 
 ----
 
+- `Try it Online`_
 - `Installation and Upgrade`_
 - `Usage`_
 - `Usage from Commandline`_
 - `Requirements`_
 - `Acknowledgements`_
 - `Contribute`_
-- `Report Issues <https://github.com/your_github_account/pct_python_default_test/blob/master/ISSUE_TEMPLATE.md>`_
-- `Pull Request <https://github.com/your_github_account/pct_python_default_test/blob/master/PULL_REQUEST_TEMPLATE.md>`_
-- `Code of Conduct <https://github.com/your_github_account/pct_python_default_test/blob/master/CODE_OF_CONDUCT.md>`_
+- `Report Issues <https://github.com/bitranox/pct_python_default_test/blob/master/ISSUE_TEMPLATE.md>`_
+- `Pull Request <https://github.com/bitranox/pct_python_default_test/blob/master/PULL_REQUEST_TEMPLATE.md>`_
+- `Code of Conduct <https://github.com/bitranox/pct_python_default_test/blob/master/CODE_OF_CONDUCT.md>`_
 - `License`_
 - `Changelog`_
 
 ----
 
+Try it Online
+-------------
 
+You might try it right away in Jupyter Notebook by using the "launch binder" badge, or click `here <https://mybinder.org/v2/gh/{{rst_include.
+repository_slug}}/master?filepath=pct_python_default_test.ipynb>`_
 
 Installation and Upgrade
 ------------------------
@@ -93,7 +98,15 @@ Installation and Upgrade
     python -m pip --upgrade setuptools
     python -m pip --upgrade wheel
 
+- to install the latest release from PyPi via pip (recommended):
 
+.. code-block:: bash
+
+    # install latest release from PyPi
+    python -m pip install --upgrade pct_python_default_test
+
+    # test latest release from PyPi without installing (can be skipped)
+    python -m pip install pct_python_default_test --install-option test
 
 - to install the latest development version from github via pip:
 
@@ -101,13 +114,13 @@ Installation and Upgrade
 .. code-block:: bash
 
     # normal install
-    python -m pip install --upgrade git+https://github.com/your_github_account/pct_python_default_test.git
+    python -m pip install --upgrade git+https://github.com/bitranox/pct_python_default_test.git
 
     # to test without installing (can be skipped)
-    python -m pip install git+https://github.com/your_github_account/pct_python_default_test.git --install-option test
+    python -m pip install git+https://github.com/bitranox/pct_python_default_test.git --install-option test
 
     # to install and upgrade all dependencies regardless of version number
-    python -m pip install --upgrade git+https://github.com/your_github_account/pct_python_default_test.git --upgrade-strategy eager
+    python -m pip install --upgrade git+https://github.com/bitranox/pct_python_default_test.git --upgrade-strategy eager
 
 
 - include it into Your requirements.txt:
@@ -115,8 +128,11 @@ Installation and Upgrade
 .. code-block:: bash
 
     # Insert following line in Your requirements.txt:
+    # for the latest Release on pypi:
+    pct_python_default_test
+
     # for the latest development version :
-    pct_python_default_test @ git+https://github.com/your_github_account/pct_python_default_test.git
+    pct_python_default_test @ git+https://github.com/bitranox/pct_python_default_test.git
 
     # to install and upgrade all modules mentioned in requirements.txt:
     python -m pip install --upgrade -r /<path>/requirements.txt
@@ -128,7 +144,7 @@ Installation and Upgrade
 .. code-block:: bash
 
     # cd ~
-    $ git clone https://github.com/your_github_account/pct_python_default_test.git
+    $ git clone https://github.com/bitranox/pct_python_default_test.git
     $ cd pct_python_default_test
 
     # to test without installing (can be skipped)
@@ -144,7 +160,7 @@ Installation and Upgrade
 .. code-block:: shell
 
     # from Your shell's homedirectory:
-    $ git clone https://github.com/your_github_account/pct_python_default_test.git
+    $ git clone https://github.com/bitranox/pct_python_default_test.git
     $ cd pct_python_default_test
 
     # to run the tests:
@@ -203,7 +219,7 @@ Contribute
 ----------
 
 I would love for you to fork and send me pull request for this project.
-- `please Contribute <https://github.com/your_github_account/pct_python_default_test/blob/master/CONTRIBUTING.md>`_
+- `please Contribute <https://github.com/bitranox/pct_python_default_test/blob/master/CONTRIBUTING.md>`_
 
 License
 -------

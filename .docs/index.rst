@@ -1,11 +1,12 @@
+- `Try it Online`_
 - `Installation and Upgrade`_
 - `Usage`_
 - `Usage from Commandline`_
 - `Requirements`_
 - `Acknowledgements`_
 - `Contribute`_
-- `Report Issues <https://github.com/your_github_account/pct_python_default_test/blob/master/ISSUE_TEMPLATE.md>`_
-- `Pull Request <https://github.com/your_github_account/pct_python_default_test/blob/master/PULL_REQUEST_TEMPLATE.md>`_
-- `Code of Conduct <https://github.com/your_github_account/pct_python_default_test/blob/master/CODE_OF_CONDUCT.md>`_
+- `Report Issues <https://github.com/bitranox/pct_python_default_test/blob/master/ISSUE_TEMPLATE.md>`_
+- `Pull Request <https://github.com/bitranox/pct_python_default_test/blob/master/PULL_REQUEST_TEMPLATE.md>`_
+- `Code of Conduct <https://github.com/bitranox/pct_python_default_test/blob/master/CODE_OF_CONDUCT.md>`_
 - `License`_
 - `Changelog`_

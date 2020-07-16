@@ -33,4 +33,4 @@ omit =
     venv/*
     tests/*
     setup.py
-    conf_root.py
+    conf_pct_python_default_test.py
