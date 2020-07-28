@@ -110,7 +110,7 @@ install:
     - ${cPIP} install lib_travis
     - log_util --colortest
     # upgrade pip, setuptools, wheel, pytest-pycodestyle
-    - lib_travis upgrade_setup_related
+    - lib_travis install
     - $(command -v sudo 2>/dev/null) git clone https://github.com/bitranox/lib_bash_wine.git /usr/local/lib_bash_wine
     - $(command -v sudo 2>/dev/null) chmod -R 0755 /usr/local/lib_bash_wine
     - $(command -v sudo 2>/dev/null) chmod -R +x /usr/local/lib_bash_wine/*.sh
@@ -129,40 +129,12 @@ install:
 script:
     - BRANCH=$(lib_travis get_branch)
     - log_util --level=NOTICE --banner "working on branch ${BRANCH}"
-    - lib_travis run_tests
+    - lib_travis script
 
 
 after_success:
-    - ${cPREFIX} coverage report
-    - ${cPREFIX} codecov
-    # codeclimate coverage upload - TODO: check function on wine
-    - if [ "${TRAVIS_OS_NAME}" == 'windows' ]; then
-          CODECLIMATE_REPO_TOKEN="${CC_TEST_REPORTER_ID}";
-          ${cPREFIX} ${cPIP} install codeclimate-test-reporter;
-          ${cPREFIX} codeclimate-test-reporter;
-      else
-          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter;
-          chmod +x ./cc-test-reporter;
-          ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT;
-      fi
-
-    # This works for sure - the Travis deploy is somehow buggy.
-    # create the secret :
-    # pypi_password
-    # to create the secret :
-    # cd /<repository>
-    # sudo travis encrypt -r <github_account>/<repository> pypi_password=*****
-    # copy and paste the encrypted password in the PizzaCutter Config File
-    - if [[ ${deploy_on_pypi} == "True" ]] && [[ -n ${TRAVIS_TAG} ]]; then
-          ${lib_bash_banner} "Deploy on PyPi";
-          export travis_deploy="True";
-          ${cPREFIX} ${cPIP} install readme_renderer;
-          ${cPREFIX} ${cPIP} install --upgrade twine;
-          ${cPREFIX} ${cPIP} install wheel;
-          ${cPREFIX} ${cPYTHON} setup.py sdist bdist_wheel;
-          ${cPREFIX} twine check dist/*;
-          ${cPREFIX} twine upload --repository-url https://upload.pypi.org/legacy/ -u bitranox -p ${pypi_password} dist/*;
-      fi
+    - lib_travis after_success
+    - lib_travis deploy
 
 notifications:
   email:
