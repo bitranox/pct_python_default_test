@@ -125,10 +125,12 @@ install:
     - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/004_000_install_wine_git_portable.sh ; fi
     - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/005_000_install_wine_powershell_core.sh ; fi
 
+
 script:
     - BRANCH=$(lib_travis get_branch)
     - log_util --level=NOTICE --banner "working on branch ${BRANCH}"
     - lib_travis run_tests
+
 
 after_success:
     - ${cPREFIX} coverage report
