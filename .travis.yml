@@ -100,7 +100,13 @@ matrix:
 
 
 install:
-    # install lib_bash_wine - this installs also lib_bash
+    - ${cPIP} install lib_travis
+    - log_util --colortest
+    - lib_travis run "upgrade pip" "${cPREFIX} ${cPIP} install --upgrade pip"
+    - lib_travis run "upgrade setuptools" "${cPREFIX} ${cPIP} install --upgrade setuptools"
+    - lib_travis run "upgrade wheel" "${cPREFIX} ${cPIP} install --upgrade wheel"
+    - lib_travis run "upgrading pytest-pycodestyle" "${cPREFIX} ${cPIP} install --upgrade "pytest-pycodestyle; python_version >= \"3.5\"""
+    # - ${cPREFIX} ${cPIP} install --upgrade "pytest-pycodestyle; python_version >= \"3.5\""
     - $(command -v sudo 2>/dev/null) git clone https://github.com/bitranox/lib_bash_wine.git /usr/local/lib_bash_wine
     - $(command -v sudo 2>/dev/null) chmod -R 0755 /usr/local/lib_bash_wine
     - $(command -v sudo 2>/dev/null) chmod -R +x /usr/local/lib_bash_wine/*.sh
@@ -109,15 +115,6 @@ install:
     - export lib_bash_banner="/usr/local/lib_bash/lib_helpers.sh banner"
     - export lib_bash_banner_warning="/usr/local/lib_bash/lib_helpers.sh banner_warning"
     - export lib_bash_wine="/usr/local/lib_bash_wine"
-    - ${lib_bash_banner} "upgrading pip"; ${cPREFIX} ${cPIP} install --upgrade pip
-    - ${lib_bash_banner} "upgrading setuptools"; ${cPREFIX} ${cPIP} install --upgrade setuptools
-    - ${lib_bash_banner} "upgrading wheel"; ${cPREFIX} ${cPIP} install --upgrade wheel
-    - ${lib_bash_banner} "upgrading pytest-pycodestyle"; ${cPREFIX} ${cPIP} install --upgrade "pytest-pycodestyle; python_version >= \"3.5\""
-    - ${lib_bash_banner} "installing lib_log_utils"; ${cPREFIX} ${cPIP} install git+https://github.com/bitranox/lib_log_utils.git
-    - if [[ ${build_docs} == "True" ]]; then
-          ${lib_bash_banner} "installing rst_include"; ${cPREFIX} ${cPIP} install git+https://github.com/bitranox/rst_include.git;
-      fi
-
     - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/001_000_install_wine.sh ; fi
     - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/002_000_install_wine_machine.sh ; fi
     - if [[ ${wine_python_version} == "python3" ]]; then ${lib_bash_wine}/003_000_install_wine_python3_preinstalled.sh ; fi
