@@ -101,9 +101,11 @@ matrix:
 
 
 install:
+    # - ${cPIP} install git+https://github.com/bitranox/lib_travis.git@development
     - ${cPIP} install lib_travis
     - log_util --colortest
-    - lib_travis upgrade_setup_related  # upgrade pip, setuptools, wheel, pytest-pycodestyle
+    # upgrade pip, setuptools, wheel, pytest-pycodestyle
+    - lib_travis upgrade_setup_related
     # - lib_travis run "upgrade pip" "${cPREFIX} ${cPIP} install --upgrade pip"
     # - lib_travis run "upgrade setuptools" "${cPREFIX} ${cPIP} install --upgrade setuptools"
     # - lib_travis run "upgrade wheel" "${cPREFIX} ${cPIP} install --upgrade wheel"
