@@ -5,6 +5,7 @@ sudo: true
 
 env:
     global:
+        - COLUMN=":"				# otherwise we can not print columns due to yaml limitations
         - cPREFIX=""				# prefix before commands - used for wine, there the prefix is "wine"
         - cPYTHON="python"			# command to launch python interpreter (its different on macOs, there we need python3)
         - cPIP="python -m pip"   	# command to launch pip (its different on macOs, there we need pip3)
@@ -102,11 +103,11 @@ matrix:
 install:
     - ${cPIP} install lib_travis
     - log_util --colortest
-    - lib_travis run "upgrade pip" "${cPREFIX} ${cPIP} install --upgrade pip"
-    - lib_travis run "upgrade setuptools" "${cPREFIX} ${cPIP} install --upgrade setuptools"
-    - lib_travis run "upgrade wheel" "${cPREFIX} ${cPIP} install --upgrade wheel"
-    - lib_travis run "upgrading pytest-pycodestyle" '${cPREFIX} ${cPIP} install --upgrade "pytest-pycodestyle; python_version >= \"3.5\""'
-    # - lib_travis run_x --no-split -- "upgrading pytest-pycodestyle" ${cPREFIX} ${cPIP} install --upgrade '\"pytest-pycodestyle; python_version >= \\\"3.5\\\"\"'
+    - lib_travis upgrade_setup_related  # upgrade pip, setuptools, wheel, pytest-pycodestyle
+    # - lib_travis run "upgrade pip" "${cPREFIX} ${cPIP} install --upgrade pip"
+    # - lib_travis run "upgrade setuptools" "${cPREFIX} ${cPIP} install --upgrade setuptools"
+    # - lib_travis run "upgrade wheel" "${cPREFIX} ${cPIP} install --upgrade wheel"
+    # - lib_travis run "upgrading pytest-pycodestyle" '${cPREFIX} ${cPIP} install --upgrade "pytest-pycodestyle; python_version >= \"3.5\""'
     # - ${cPREFIX} ${cPIP} install --upgrade "pytest-pycodestyle; python_version >= \"3.5\""
     - $(command -v sudo 2>/dev/null) git clone https://github.com/bitranox/lib_bash_wine.git /usr/local/lib_bash_wine
     - $(command -v sudo 2>/dev/null) chmod -R 0755 /usr/local/lib_bash_wine
