@@ -105,7 +105,7 @@ install:
     - lib_travis run "upgrade pip" "${cPREFIX} ${cPIP} install --upgrade pip"
     - lib_travis run "upgrade setuptools" "${cPREFIX} ${cPIP} install --upgrade setuptools"
     - lib_travis run "upgrade wheel" "${cPREFIX} ${cPIP} install --upgrade wheel"
-    - lib_travis run_x --no-split -- "upgrading pytest-pycodestyle" ${cPREFIX} ${cPIP} install --upgrade '"pytest-pycodestyle; python_version >= \\"3.5\\""'
+    - lib_travis run_x --no-split -- "upgrading pytest-pycodestyle" ${cPREFIX} ${cPIP} install --upgrade '"pytest-pycodestyle; python_version >= \\\\"3.5\\\\""'
     # - ${cPREFIX} ${cPIP} install --upgrade "pytest-pycodestyle; python_version >= \"3.5\""
     - $(command -v sudo 2>/dev/null) git clone https://github.com/bitranox/lib_bash_wine.git /usr/local/lib_bash_wine
     - $(command -v sudo 2>/dev/null) chmod -R 0755 /usr/local/lib_bash_wine
