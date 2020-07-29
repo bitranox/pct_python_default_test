@@ -1,4 +1,4 @@
-Version 0.1.0 as of 2020-07-28, see changelog_
+Version 0.1.0 as of 2020-07-29, see changelog_
 
 =======================================================
 
@@ -93,10 +93,38 @@ repository_slug}}/master?filepath=pct_python_default_test.ipynb>`_
 Usage
 -----------
 
-.. code-block::
+- example for including docstrings
 
-    import the module and check the code - its easy and documented there, including doctest examples.
-    in case of any questions the usage section might be expanded at a later time
+.. code-block:: python
+
+    def main() -> None:
+        """
+        the main method, prints hello world
+
+
+        Parameter
+        ----------
+        none
+            none
+
+
+        Result
+        ----------
+        none
+
+
+        Exceptions
+        ----------
+        none
+
+
+        Examples
+        ----------
+
+        >>> main()
+        Hello World - by PizzaCutter
+
+        """
 
 Usage from Commandline
 ------------------------
