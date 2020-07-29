@@ -15,6 +15,10 @@ env:
         - WINEDEBUG=fixme-all
         # the registered CLI Command
         - CLI_COMMAND=pct_python_default_test
+        # the source file for rst_include (rebuild rst file includes)
+        - RST_INCLUDE_SOURCE="./.docs/README_template.rst"
+        # the target file for rst_include (rebuild rst file includes)
+        - RST_INCLUDE_TARGET="./README.rst"
         # secure environment variable
         - secure: "KOrGxBBo5qhRFVJvZy3TIjJKjBP3xRGj1WF4N1tpqnRo4l4zt3ii1mEJIZPdIdHUJmGuf6VAGHiElElLTY16VZ00dQuNBM3gBJFgRbR9NIOOs6kA25Q4qyriLw4kID29mmZFrwXCGVFjEaAoy7m/KCoWrKLL4vusE2u0/cgBV7gfwI5widuogN9DPwo5mpybNocn9Ngg5w2AF/Ze+sCCiVC7CyQJkxtUyJkxNgABz4pmESb70P70b+ipd0H5txL5T5nohMkKOKoruxD06t9IUb2PzE+yMFgGYzpnYyJxe+Wzz0+Es00uHxX1sQMGbC8X0cnFPDoTEpPaZuAeiLjM0l2vqUeZdmZSX2QbnvAKG1RaNoegP59FScsghPtAESEBy+i7DnFXg9ejjkT65CZR5EwwmYA0Z5Hb58s+v/8qN6+6QmUsR3FmxUntRv9c9dvtnHvPT9Y4OG/tIOC8cMI6I6SKWH2CMryifiGMyU3StOyp5cAtfVve9LNTQXb4oGQIDYzD/VrZ7ijY7SYH5XBbdejOpsgziZgKN/YsQH59BIK8Q1l16lKvayI5ZCh0kRzFBxCVlsurv7a0R3B0+NW4Qj7y6hESZyOTrP15nv6zvSDhcFbcoe2rkzoe/j2VhJ9UBwcFMpNJYoJiRTsRW+YL/IdqIVnd1nYcY6MijYgN7oY="  # CC_TEST_REPORTER_ID.secret
         - secure: "AQuSuc2+x1RrJP+wAVLXXuMU3nrRRoIWyAv5oYRk9Hjw8XgZGE/ikHY02B48XFclyMJp0mt2Zu9kJKOwaYswiN8mfeOf4R8vvLi2XjKHNErfOcKTjNLToP+KnZvNYnlEq0PriHRfYxTXwBg1lvi6JMHIymoUAC9cwBhAsJ25tiK/rSeRTivzL4NA8N0CrP1JAEaPuIx5pJjlBjbJcEJDdu5ghCfZm5LB4gxJ0/7mOAH85duVXLLAkTEwxDijSANqSkjyC1WZeXrbEUfCodnQ3lqu9P84GOg9ywslYBFsbIO/iqsJNetYrndc6FwOEhWUSC2X6O2ZzAEWviH9CzTI7CsFqMrrxMkA7x2BhYJ/HCngqlXC1Yi6cGYHwCprcDDZofXRBYU78msUmWmXkoVoUa/E5OcXoMjkWOo7l8VjvKoQ4kbBbr0GL2zImmua+hykkB2YWfDdBt4OpVgvXwTN5KatwY7aA+bCbRNqGIP/TUFdC7rmcvy83a82X+SUKonU4nTdjpyvwK0bw1BqmODTL9rCWRuOEsyMFNJu9Nz/aBDM24Yk9X3GN3AkLza7b9bIJ+iZ0I+X+Y5qF+fHoFNQvrCS2I/E8pQCcoMoc8Hbke9O/VTGFpKoEHI/CeSfuBh4bIyM0WBU6EaIwIfQFedNeG3CEGiafxwDqBvX9IfSBrY="  # pypi_password.secret
@@ -53,45 +57,50 @@ matrix:
       language: python
       python: "3.6"
       before_install:
-          - export mypy_strict_typecheck="True"
-          - export build_docs="False"
-          - export deploy_on_pypi="False"
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="False"
+          - export DEPLOY="False"
 
 
     - os: linux
       language: python
       python: "3.7"
       before_install:
-          - export mypy_strict_typecheck="True"
-          - export build_docs="False"
-          - export deploy_on_pypi="False"
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="False"
+          - export DEPLOY="False"
 
 
     - os: linux
       language: python
       python: "3.8"
       before_install:
-          - export mypy_strict_typecheck="True"
-          - export build_docs="True"
-          - export deploy_on_pypi="True"
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="True"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="True"
 
 
     - os: linux
       language: python
       python: "3.8-dev"
       before_install:
-          - export mypy_strict_typecheck="True"
-          - export build_docs="False"
-          - export deploy_on_pypi="False"
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="False"
+          - export DEPLOY="False"
 
 
     - os: linux
       language: python
       python: "pypy3"
       before_install:
-          - export mypy_strict_typecheck="False"
-          - export build_docs="False"
-          - export deploy_on_pypi="False"
+          - export MYPY_STRICT="False"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="False"
+          - export DEPLOY="False"
 
 
     - os: osx
@@ -109,28 +118,12 @@ matrix:
 install:
     - ${cPIP} install lib_travis
     - log_util --colortest
-    # upgrade pip, setuptools, wheel, pytest-pycodestyle
     - lib_travis install
-    - $(command -v sudo 2>/dev/null) git clone https://github.com/bitranox/lib_bash_wine.git /usr/local/lib_bash_wine
-    - $(command -v sudo 2>/dev/null) chmod -R 0755 /usr/local/lib_bash_wine
-    - $(command -v sudo 2>/dev/null) chmod -R +x /usr/local/lib_bash_wine/*.sh
-    - $(command -v sudo 2>/dev/null) /usr/local/lib_bash_wine/install_or_update.sh
-    - export lib_bash_color="/usr/local/lib_bash/lib_color.sh"
-    - export lib_bash_banner="/usr/local/lib_bash/lib_helpers.sh banner"
-    - export lib_bash_banner_warning="/usr/local/lib_bash/lib_helpers.sh banner_warning"
-    - export lib_bash_wine="/usr/local/lib_bash_wine"
-    - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/001_000_install_wine.sh ; fi
-    - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/002_000_install_wine_machine.sh ; fi
-    - if [[ ${wine_python_version} == "python3" ]]; then ${lib_bash_wine}/003_000_install_wine_python3_preinstalled.sh ; fi
-    - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/004_000_install_wine_git_portable.sh ; fi
-    - if [[ ${cPREFIX} == "wine" ]]; then ${lib_bash_wine}/005_000_install_wine_powershell_core.sh ; fi
-
 
 script:
     - BRANCH=$(lib_travis get_branch)
     - log_util --level=NOTICE --banner "working on branch ${BRANCH}"
     - lib_travis script
-
 
 after_success:
     - lib_travis after_success
