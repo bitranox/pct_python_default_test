@@ -62,7 +62,7 @@ os:
 stages:
 - install_windows
 - install_linux
-- install_osc
+- install_osx
 - test
 - deploy
 
