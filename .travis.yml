@@ -122,15 +122,19 @@ matrix:
 jobs:
     include:
         - stage: test
-          script ${cPIP} install lib_travis
-          script log_util --colortest
-          script lib_travis install
-          script BRANCH=$(lib_travis get_branch)
-          script log_util --level=NOTICE --banner "working on branch ${BRANCH}"
           script lib_travis script
-          script lib_travis after_success
         - stage: deploy   
           script lib_travis deploy
+
+install:
+    - ${cPIP} install lib_travis
+    - log_util --colortest
+    - lib_travis install
+    - BRANCH=$(lib_travis get_branch)
+    - log_util --level=NOTICE --banner "working on branch ${BRANCH}"
+
+after_success:
+    - lib_travis after_success
 
 notifications:
   email:
