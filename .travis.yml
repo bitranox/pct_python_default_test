@@ -35,7 +35,7 @@ addons:
 
 services:
   - xvfb          # is needed for WINE on headless installation
-  - docker        # for 
+  - docker        # for cibuildwheel
 
 arch:
   - amd64
@@ -58,6 +58,18 @@ os:
   - linux
   - osx
 
+stages:
+  - name: install
+  - name: install windows	
+  - name: test
+  - name: deploy
+
+jobs:
+  include:
+    - stage: install
+      script: echo "here we are"
+
+   
 
 notifications:
   email:
