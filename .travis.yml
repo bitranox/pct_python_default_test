@@ -1,4 +1,3 @@
-language: python
 group: travis_latest
 dist: bionic
 sudo: true
@@ -38,6 +37,45 @@ services:   			# start services
   - xvfb    			# is needed for WINE on headless installation
 
 
+language: 
+  - python
+
+python:
+  - 3.6
+    before_install:
+      - export MYPY_STRICT="True"
+      - export BUILD_DOCS="False"
+      - export DEPLOY_CHECK="True"
+      - export DEPLOY="False"
+
+  - 3.7
+    before_install:
+      - export MYPY_STRICT="True"
+      - export BUILD_DOCS="False"
+      - export DEPLOY_CHECK="True"
+      - export DEPLOY="False"
+
+  - 3.8
+    before_install:
+      - export MYPY_STRICT="True"
+      - export BUILD_DOCS="True"
+      - export DEPLOY_CHECK="True"
+      - export DEPLOY="True"
+
+  - 3.8-dev
+    before_install:
+      - export MYPY_STRICT="True"
+      - export BUILD_DOCS="False"
+      - export DEPLOY_CHECK="True"
+      - export DEPLOY="False"
+
+  - pypy3
+    before_install:
+      - export MYPY_STRICT="False"
+      - export BUILD_DOCS="False"
+      - export DEPLOY_CHECK="True"
+      - export DEPLOY="False"
+
 os: 
   - windows
     language: sh
@@ -50,55 +88,11 @@ os:
       - /usr/local/lib_bash/lib_retry.sh retry choco install python3
       - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
 
-
   - linux
-    python: "3.6"
-    before_install:
-      - export MYPY_STRICT="True"
-      - export BUILD_DOCS="False"
-      - export DEPLOY_CHECK="True"
-      - export DEPLOY="False"
-
-
-  - linux
-    python: "3.7"
-    before_install:
-      - export MYPY_STRICT="True"
-      - export BUILD_DOCS="False"
-      - export DEPLOY_CHECK="True"
-      - export DEPLOY="False"
-
-
-  - linux
-    python: "3.8"
-    before_install:
-      - export MYPY_STRICT="True"
-      - export BUILD_DOCS="True"
-      - export DEPLOY_CHECK="True"
-      - export DEPLOY="True"
-
-
-  - linux
-    python: "3.8-dev"
-    before_install:
-      - export MYPY_STRICT="True"
-      - export BUILD_DOCS="False"
-      - export DEPLOY_CHECK="True"
-      - export DEPLOY="False"
-
-  - linux
-    python: "pypy3"
-    before_install:
-      - export MYPY_STRICT="False"
-      - export BUILD_DOCS="False"
-      - export DEPLOY_CHECK="True"
-      - export DEPLOY="False"
-
 
   - osx
     language: sh
     name: "macOS 10.15.4"
-    python: "3.8"
     osx_image: xcode11.5
     env:
       # on osx pip and python points to python 2.7 - therefore we have to use pip3 and python3 here
