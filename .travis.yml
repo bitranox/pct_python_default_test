@@ -37,7 +37,13 @@ services:
   - xvfb          # is needed for WINE on headless installation
   - docker        # for 
 
-language: 
+arch:
+  - amd64
+  - ppc64le
+  - s390x
+  - arm64
+  
+language:
   - python
 
 python:
