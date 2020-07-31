@@ -58,13 +58,6 @@ os:
   - linux
   - osx
 
-stages:
-  - name: install_linux
-  - name: install_osx
-  - name: install_windows	
-  - name: test
-  - name: deploy
-
 jobs:
   include:
     - stage: install_linux
