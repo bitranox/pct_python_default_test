@@ -267,6 +267,8 @@ script:
     - lib_travis script
 
 after_success:
+    - export CIBW_BUILD="cp3?-* pp3?-"
+    - export CIBW_SKIP="cp35-*"
     - lib_travis after_success
     - lib_travis deploy
 
