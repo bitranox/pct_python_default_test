@@ -1,3 +1,4 @@
+language: python
 group: travis_latest
 dist: bionic
 sudo: true
@@ -28,25 +29,13 @@ env:
 
 
 addons:
-  apt:
-    packages:
-    - xvfb      # install xvfb virtual framebuffer - this we need for WINE
-    - winbind   # needed for WINE
+    apt:
+        packages:
+            - xvfb      # install xvfb virtual framebuffer - this we need for WINE
+            - winbind   # needed for WINE
 
-services:
-- xvfb          # is needed for WINE on headless installation
-- docker        # for cibuildwheel
-
-language:
-- python
-
-python:
-- 3.6
-- 3.7
-- 3.8
-- 3.8-dev
-- pypy3
-
+services:   			# start services
+  - xvfb    			# is needed for WINE on headless installation
 
 arch:
 - amd64
@@ -54,37 +43,14 @@ arch:
 - s390x
 - arm64
 
-os: 
-- windows
-- linux
-- osx
-  language: sh
-  name: "macOS 10.15.4"
-  osx_image: xcode11.5
-  env:
-  # on osx pip and python points to python 2.7 - therefore we have to use pip3 and python3 here
-  - cPREFIX=""                  # prefix before commands - used for wine, there the prefix is "wine"
-  - cPYTHON="python3"           # command to launch python interpreter (its different on macOs, there we need python3)
-  - cPIP="python3 -m pip"       # command to launch pip (its different on macOs, there we need pip3)
-
 jobs:
-  exclude:
+  include:
   - os: windows
-    arch: ppc64le
-    arch: s390x
-    arch: arm64
-    python: 3.6
-    python: 3.7
-    python: 3.8-dev
-    python: pypy3
-  - os: osx
-    arch: ppc64le
-    arch: s390x
-    arch: arm64
-    python: 3.6
+    arch: amd64
     python: 3.8
-    python: 3.8-dev
-    python: pypy3
+  - os: osx
+    arch: amd64
+    python: 3.7
   include:
   - stage: deploy
     arch: amd64
@@ -92,6 +58,101 @@ jobs:
     python: 3.8
     script: echo "here we are"
 
+
+matrix:
+    include:
+
+    - os: windows
+      language: sh
+      name: "Windows Python 3.8"
+
+      # oddly a secure password under env: global: causes that choco fails
+      # so we need to put the option : filter_secrets: false
+      # this can be a security issue, check that You dont leak secrets here !
+      filter_secrets: false
+      before_install:
+          - git clone https://github.com/bitranox/lib_bash.git /usr/local/lib_bash
+          - chmod -R 0755 /usr/local/lib_bash
+          - chmod -R +x /usr/local/lib_bash/*.sh
+          - /usr/local/lib_bash/lib_retry.sh retry choco install python3
+          - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+
+
+    - os: linux
+      language: python
+      python: "3.6"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+
+    - os: linux
+      language: python
+      python: "3.7"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+
+    - os: linux
+      language: python
+      python: "3.8"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="True"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="True"
+
+
+    - os: linux
+      language: python
+      python: "3.8-dev"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+
+    - os: linux
+      language: python
+      python: "pypy3"
+      before_install:
+          - export MYPY_STRICT="False"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+
+    - os: osx
+      language: sh
+      name: "macOS 10.15.4"
+      python: "3.8"
+      osx_image: xcode11.5
+      env:
+        # on osx pip and python points to python 2.7 - therefore we have to use pip3 and python3 here
+        - cPREFIX=""				# prefix before commands - used for wine, there the prefix is "wine"
+        - cPYTHON="python3"			# command to launch python interpreter (its different on macOs, there we need python3)
+        - cPIP="python3 -m pip"   	# command to launch pip (its different on macOs, there we need pip3)
+
+
+install:
+    - ${cPIP} install lib_travis
+    - log_util --colortest
+    - lib_travis install
+
+script:
+    - BRANCH=$(lib_travis get_branch)
+    - log_util --level=NOTICE --banner "working on branch ${BRANCH}"
+    - lib_travis script
+
+after_success:
+    - lib_travis after_success
+    - lib_travis deploy
 
 notifications:
   email:
