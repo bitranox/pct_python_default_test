@@ -36,6 +36,7 @@ addons:
 
 services:   			# start services
   - xvfb    			# is needed for WINE on headless installation
+  - docker				# for cibuilwheel
 
 
 matrix:
@@ -118,20 +119,18 @@ matrix:
         - cPYTHON="python3"			# command to launch python interpreter (its different on macOs, there we need python3)
         - cPIP="python3 -m pip"   	# command to launch pip (its different on macOs, there we need pip3)
 
-
-install:
-    - ${cPIP} install lib_travis
-    - log_util --colortest
-    - lib_travis install
-
-script:
-    - BRANCH=$(lib_travis get_branch)
-    - log_util --level=NOTICE --banner "working on branch ${BRANCH}"
-    - lib_travis script
-
-after_success:
-    - lib_travis after_success
-    - lib_travis deploy
+jobs:
+    include:
+        - stage: test
+          script ${cPIP} install lib_travis
+          script log_util --colortest
+          script lib_travis install
+          script BRANCH=$(lib_travis get_branch)
+          script log_util --level=NOTICE --banner "working on branch ${BRANCH}"
+          script lib_travis script
+          script lib_travis after_success
+        - stage: deploy   
+          script lib_travis deploy
 
 notifications:
   email:
