@@ -30,8 +30,8 @@ env:
 addons:
   apt:
     packages:
-      - xvfb      # install xvfb virtual framebuffer - this we need for WINE
-      - winbind   # needed for WINE
+    - xvfb      # install xvfb virtual framebuffer - this we need for WINE
+    - winbind   # needed for WINE
 
 services:
 - xvfb          # is needed for WINE on headless installation
@@ -56,29 +56,21 @@ arch:
 
 os: 
 - windows
-- linux:
+- linux
 - osx
 
-stages:
-- install_windows
-- install_linux
-- install_osx
-- test
-- deploy
-
 jobs:
+  exclude:
+  - os: windows
+    arch = ppc64le OR arch = s390x OR arch = arm64 OR python != 3.8
+  - os: osx
+    arch = ppc64le OR arch = s390x OR arch = arm64
   include:
-  - stage: install_windows
-    os: windows
-    script: echo "here we are"
-  - stage: install_linux
+  - stage: deploy
+    arch: amd64
     os: linux
+    python: 3.8
     script: echo "here we are"
-  - stage: install_osx
-    os: osx
-    script: echo "here we are"
-  - stage: test
-    script: echo "TEST"
 
 
 notifications:
