@@ -37,26 +37,14 @@ addons:
 services:   			# start services
   - xvfb    			# is needed for WINE on headless installation
 
-arch:
-- amd64
-- ppc64le
-- s390x
-- arm64
 
 jobs:
   include:
-  - os: windows
-    arch: amd64
-    python: 3.8
-  - os: osx
-    arch: amd64
-    python: 3.7
-  include:
-  - stage: deploy
+  - stage: deploy_sdist
     arch: amd64
     os: linux
     python: 3.8
-    script: echo "here we are"
+    script: echo "deploy_sdist"
 
 
 matrix:
