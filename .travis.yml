@@ -38,11 +38,16 @@ services:   			# start services
   - xvfb    			# is needed for WINE on headless installation
 
 
+stages:
+  - test
+  - deploy_sdist
+
 jobs:
   include:
   - stage: deploy_sdist
     arch: amd64
     os: linux
+    language: python
     python: 3.8
     script: echo "deploy_sdist"
 
