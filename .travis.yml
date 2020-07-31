@@ -60,22 +60,26 @@ os:
 - osx
 
 stages:
-- install
+- install_windows
+- install_linux
+- install_osc
 - test
 - deploy
 
 jobs:
   include:
-  - stage: install
-    - os: osx
-      script: echo "here we are"
-  - stage: install_osx
-    script: echo "here we are"
   - stage: install_windows
+    os: windows
+    script: echo "here we are"
+  - stage: install_linux
+    os: linux
+    script: echo "here we are"
+  - stage: install_osx
+    os: osx
     script: echo "here we are"
   - stage: test
     script: echo "TEST"
-   
+
 
 notifications:
   email:
