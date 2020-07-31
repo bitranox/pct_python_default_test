@@ -36,7 +36,6 @@ addons:
 
 services:   			# start services
   - xvfb    			# is needed for WINE on headless installation
-  - docker				# for cibuilwheel
 
 
 os: 
@@ -53,7 +52,6 @@ os:
 
 
   - linux
-    language: python
     python: "3.6"
     before_install:
       - export MYPY_STRICT="True"
@@ -63,7 +61,6 @@ os:
 
 
   - linux
-    language: python
     python: "3.7"
     before_install:
       - export MYPY_STRICT="True"
@@ -73,7 +70,6 @@ os:
 
 
   - linux
-    language: python
     python: "3.8"
     before_install:
       - export MYPY_STRICT="True"
@@ -83,7 +79,6 @@ os:
 
 
   - linux
-    language: python
     python: "3.8-dev"
     before_install:
       - export MYPY_STRICT="True"
@@ -92,7 +87,6 @@ os:
       - export DEPLOY="False"
 
   - linux
-    language: python
     python: "pypy3"
     before_install:
       - export MYPY_STRICT="False"
@@ -113,21 +107,21 @@ os:
       - cPIP="python3 -m pip"   	# command to launch pip (its different on macOs, there we need pip3)
 
 jobs:
-    include:
-        - stage: test
-          script lib_travis script
-        - stage: deploy   
-          script lib_travis deploy
+  include:
+    - stage: test
+      script: lib_travis script
+    - stage: deploy   
+      script: lib_travis deploy
 
 install:
-    - ${cPIP} install lib_travis
-    - log_util --colortest
-    - lib_travis install
-    - BRANCH=$(lib_travis get_branch)
-    - log_util --level=NOTICE --banner "working on branch ${BRANCH}"
+  - ${cPIP} install lib_travis
+  - log_util --colortest
+  - lib_travis install
+  - BRANCH=$(lib_travis get_branch)
+  - log_util --level=NOTICE --banner "working on branch ${BRANCH}"
 
 after_success:
-    - lib_travis after_success
+  - lib_travis after_success
 
 notifications:
   email:
