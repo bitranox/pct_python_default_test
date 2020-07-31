@@ -41,6 +41,7 @@ matrix:
     include:
 
     - os: windows
+      if: true
       language: sh
       name: "Windows Python 3.8"
 
@@ -54,6 +55,10 @@ matrix:
           - chmod -R +x /usr/local/lib_bash/*.sh
           - /usr/local/lib_bash/lib_retry.sh retry choco install python3
           - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_SDIST="True"
+          - export DEPLOY_WHEEL="True"
+          - export MYPY_STRICT="True"   
 
 
     - os: linux
@@ -244,6 +249,7 @@ matrix:
           - export MYPY_STRICT="True"   
 
     - os: osx
+      if: true
       language: sh
       name: "macOS 10.15.4"
       python: "3.8"
@@ -253,6 +259,10 @@ matrix:
         - cPREFIX=""				# prefix before commands - used for wine, there the prefix is "wine"
         - cPYTHON="python3"			# command to launch python interpreter (its different on macOs, there we need python3)
         - cPIP="python3 -m pip"   	# command to launch pip (its different on macOs, there we need pip3)
+        - export BUILD_DOCS="False"
+        - export DEPLOY_SDIST="True"
+        - export DEPLOY_WHEEL="True"
+        - export MYPY_STRICT="True"   
 
 
 install:
