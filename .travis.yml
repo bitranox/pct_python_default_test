@@ -56,7 +56,7 @@ matrix:
           - /usr/local/lib_bash/lib_retry.sh retry choco install python3
           - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
           - export BUILD_DOCS="False"
-          - export DEPLOY_SDIST="True"
+          - export DEPLOY_SDIST="False"
           - export DEPLOY_WHEEL="True"
           - export MYPY_STRICT="True"   
 
@@ -260,7 +260,7 @@ matrix:
         - cPYTHON="python3"			# command to launch python interpreter (its different on macOs, there we need python3)
         - cPIP="python3 -m pip"   	# command to launch pip (its different on macOs, there we need pip3)
         - export BUILD_DOCS="False"
-        - export DEPLOY_SDIST="True"
+        - export DEPLOY_SDIST="False"
         - export DEPLOY_WHEEL="True"
         - export MYPY_STRICT="True"   
 
