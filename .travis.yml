@@ -34,48 +34,47 @@ addons:
       - winbind   # needed for WINE
 
 services:
-  - xvfb          # is needed for WINE on headless installation
-  - docker        # for cibuildwheel
+- xvfb          # is needed for WINE on headless installation
+- docker        # for cibuildwheel
 
 language:
-  - python
+- python
 
 python:
-  - 3.6
-  - 3.7
-  - 3.8
-  - 3.8-dev
-  - pypy3
+- 3.6
+- 3.7
+- 3.8
+- 3.8-dev
+- pypy3
+
+
+arch:
+- amd64
+- ppc64le
+- s390x
+- arm64
 
 os: 
-  - windows
-  - linux:
-    arch:
-    - amd64
-    - ppc64le
-    - s390x
-    - arm64
-  - osx
+- windows
+- linux:
+- osx
 
 stages:
-  - install_linux
-  - install_windows
-  - install_osx
-  - test
+- install_linux
+- install_windows
+- install_osx
+- test
 
 jobs:
   include:
-    - stage: install_linux
-      if: os = linux
-      script: echo "here we are"
-    - stage: install_osx
-      if: os = osx 
-      script: echo "here we are"
-    - stage: install_windows
-      if: os = windows
-      script: echo "here we are"
-    - stage: test
-      script: echo "TEST"
+  - stage: install_linux
+    script: echo "here we are"
+  - stage: install_osx
+    script: echo "here we are"
+  - stage: install_windows
+    script: echo "here we are"
+  - stage: test
+    script: echo "TEST"
    
 
 notifications:
