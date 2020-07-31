@@ -106,6 +106,7 @@ matrix:
 
     - os: linux
       arch: ppc64le
+      if: tag IS present
       language: python
       python: "3.6"
       before_install:
@@ -116,6 +117,7 @@ matrix:
 
     - os: linux
       arch: ppc64le
+      if: tag IS present
       language: python
       python: "3.7"
       before_install:
@@ -127,6 +129,7 @@ matrix:
 
     - os: linux
       arch: ppc64le
+      if: tag IS present
       language: python
       python: "3.8"
       before_install:
@@ -138,6 +141,7 @@ matrix:
 
     - os: linux
       arch: ppc64le
+      if: tag IS present
       language: python
       python: "3.8-dev"
       before_install:
@@ -147,17 +151,8 @@ matrix:
           - export DEPLOY="False"
 
     - os: linux
-      arch: ppc64le
-      language: python
-      python: "pypy3"
-      before_install:
-          - export MYPY_STRICT="False"
-          - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="True"
-          - export DEPLOY="False"
-
-    - os: linux
       arch: s390x
+      if: tag IS present
       language: python
       python: "3.6"
       before_install:
@@ -168,6 +163,7 @@ matrix:
 
     - os: linux
       arch: s390x
+      if: tag IS present
       language: python
       python: "3.7"
       before_install:
@@ -179,6 +175,7 @@ matrix:
 
     - os: linux
       arch: s390x
+      if: tag IS present
       language: python
       python: "3.8"
       before_install:
@@ -190,6 +187,7 @@ matrix:
 
     - os: linux
       arch: s390x
+      if: tag IS present
       language: python
       python: "3.8-dev"
       before_install:
@@ -198,19 +196,10 @@ matrix:
           - export DEPLOY_CHECK="True"
           - export DEPLOY="False"
 
-    - os: linux
-      arch: s390x
-      language: python
-      python: "pypy3"
-      before_install:
-          - export MYPY_STRICT="False"
-          - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="True"
-          - export DEPLOY="False"
-
 
     - os: linux
       arch: arm64
+      if: tag IS present
       language: python
       python: "3.6"
       before_install:
@@ -221,6 +210,7 @@ matrix:
 
     - os: linux
       arch: arm64
+      if: tag IS present
       language: python
       python: "3.7"
       before_install:
@@ -232,6 +222,7 @@ matrix:
 
     - os: linux
       arch: arm64
+      if: tag IS present
       language: python
       python: "3.8"
       before_install:
@@ -243,6 +234,7 @@ matrix:
 
     - os: linux
       arch: arm64
+      if: tag IS present
       language: python
       python: "3.8-dev"
       before_install:
@@ -250,17 +242,6 @@ matrix:
           - export BUILD_DOCS="False"
           - export DEPLOY_CHECK="True"
           - export DEPLOY="False"
-
-    - os: linux
-      arch: arm64
-      language: python
-      python: "pypy3"
-      before_install:
-          - export MYPY_STRICT="False"
-          - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="True"
-          - export DEPLOY="False"
-
 
     - os: osx
       language: sh
