@@ -49,27 +49,8 @@ python:
 
 os: 
   - windows
-    language: sh
-    name: "Windows Python 3.8"
-    filter_secrets: false
-    before_install:
-      - git clone https://github.com/bitranox/lib_bash.git /usr/local/lib_bash
-      - chmod -R 0755 /usr/local/lib_bash
-      - chmod -R +x /usr/local/lib_bash/*.sh
-      - /usr/local/lib_bash/lib_retry.sh retry choco install python3
-      - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
-
   - linux
-
   - osx
-    language: sh
-    name: "macOS 10.15.4"
-    osx_image: xcode11.5
-    env:
-      # on osx pip and python points to python 2.7 - therefore we have to use pip3 and python3 here
-      - cPREFIX=""				# prefix before commands - used for wine, there the prefix is "wine"
-      - cPYTHON="python3"			# command to launch python interpreter (its different on macOs, there we need python3)
-      - cPIP="python3 -m pip"   	# command to launch pip (its different on macOs, there we need pip3)
 
 
 notifications:
