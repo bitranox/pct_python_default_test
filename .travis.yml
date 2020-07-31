@@ -49,8 +49,8 @@ python:
 
 os: 
   - windows
-  - linux
-    arch:
+  - linux:
+    arch
       - amd64
       - ppc64le
       - s390x
