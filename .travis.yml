@@ -40,10 +40,6 @@ services:   			# start services
 arch:
 - amd64
 - ppc64le
-  python: 
-    - "3.6"
-    - "3.7"
-    - "3.8"
 - s390x
 - arm64
 
@@ -83,6 +79,37 @@ matrix:
 
 
     - os: linux
+      arch: amd64
+      language: python
+      python: "3.6"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: ppc64le
+      language: python
+      python: "3.6"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: s390x
+      language: python
+      python: "3.6"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: arm64
       language: python
       python: "3.6"
       before_install:
