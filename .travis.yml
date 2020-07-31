@@ -58,6 +58,12 @@ os:
   - linux
   - osx
 
+stages:
+  - install_linux
+  - install_windows
+  - install_osx
+  - test
+
 jobs:
   include:
     - stage: install_linux
@@ -69,7 +75,8 @@ jobs:
     - stage: install_windows
       if: os = windows
       script: echo "here we are"
-
+    - stage: test
+      script: echo "TEST"
    
 
 notifications:
