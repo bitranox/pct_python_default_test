@@ -38,13 +38,9 @@ services:   			# start services
   - xvfb    			# is needed for WINE on headless installation
 
 
-stages:
-  - test
-  - deploy_sdist
+matrix:
+    include:
 
-jobs:
-  include:
-  - stage: test
     - os: windows
       language: sh
       name: "Windows Python 3.8"
@@ -60,7 +56,6 @@ jobs:
           - /usr/local/lib_bash/lib_retry.sh retry choco install python3
           - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
 
-
     - os: linux
       arch: amd64
       language: python
@@ -70,37 +65,6 @@ jobs:
           - export BUILD_DOCS="False"
           - export DEPLOY_CHECK="True"
           - export DEPLOY="False"
-
-    - os: linux
-      arch: ppc64le
-      language: python
-      python: "3.6"
-      before_install:
-          - export MYPY_STRICT="True"
-          - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="True"
-          - export DEPLOY="False"
-
-    - os: linux
-      arch: s390x
-      language: python
-      python: "3.6"
-      before_install:
-          - export MYPY_STRICT="True"
-          - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="True"
-          - export DEPLOY="False"
-
-    - os: linux
-      arch: arm64
-      language: python
-      python: "3.6"
-      before_install:
-          - export MYPY_STRICT="True"
-          - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="True"
-          - export DEPLOY="False"
-
 
     - os: linux
       language: python
@@ -131,8 +95,164 @@ jobs:
           - export DEPLOY_CHECK="True"
           - export DEPLOY="False"
 
+    - os: linux
+      language: python
+      python: "pypy3"
+      before_install:
+          - export MYPY_STRICT="False"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
 
     - os: linux
+      arch: ppc64le
+      language: python
+      python: "3.6"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: ppc64le
+      language: python
+      python: "3.7"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+
+    - os: linux
+      arch: ppc64le
+      language: python
+      python: "3.8"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="True"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="True"
+
+
+    - os: linux
+      arch: ppc64le
+      language: python
+      python: "3.8-dev"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: ppc64le
+      language: python
+      python: "pypy3"
+      before_install:
+          - export MYPY_STRICT="False"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: s390x
+      language: python
+      python: "3.6"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: s390x
+      language: python
+      python: "3.7"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+
+    - os: linux
+      arch: s390x
+      language: python
+      python: "3.8"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="True"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="True"
+
+
+    - os: linux
+      arch: s390x
+      language: python
+      python: "3.8-dev"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: s390x
+      language: python
+      python: "pypy3"
+      before_install:
+          - export MYPY_STRICT="False"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+
+    - os: linux
+      arch: arm64
+      language: python
+      python: "3.6"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: arm64
+      language: python
+      python: "3.7"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+
+    - os: linux
+      arch: arm64
+      language: python
+      python: "3.8"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="True"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="True"
+
+
+    - os: linux
+      arch: arm64
+      language: python
+      python: "3.8-dev"
+      before_install:
+          - export MYPY_STRICT="True"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_CHECK="True"
+          - export DEPLOY="False"
+
+    - os: linux
+      arch: arm64
       language: python
       python: "pypy3"
       before_install:
@@ -152,14 +272,6 @@ jobs:
         - cPREFIX=""				# prefix before commands - used for wine, there the prefix is "wine"
         - cPYTHON="python3"			# command to launch python interpreter (its different on macOs, there we need python3)
         - cPIP="python3 -m pip"   	# command to launch pip (its different on macOs, there we need pip3)
-
-  - stage: deploy_sdist
-    arch: amd64
-    os: linux
-    language: python
-    python: 3.8
-    script: echo "deploy_sdist"
-
 
 
 install:
