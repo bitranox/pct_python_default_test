@@ -1,4 +1,4 @@
-Version 0.0.1 as of 2020-07-31, see changelog_
+Version 0.0.1 as of 2020-07-31, see `Changelog`_
 
 =======================================================
 
@@ -58,7 +58,5 @@ License
 .. include:: ./licence_mit.rst
 
 ---
-
-.. _changelog:
 
 .. include:: ../CHANGES.rst
