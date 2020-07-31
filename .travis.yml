@@ -36,7 +36,6 @@ addons:
 
 services:   			# start services
   - xvfb    			# is needed for WINE on headless installation
-  - docker              # is needed for cibuildwheel
 
 matrix:
     include:
@@ -267,9 +266,6 @@ script:
     - lib_travis script
 
 after_success:
-    - export CIBW_TEST_REQUIRES="pip setuptools pytest pytest-pycodestyle"
-    - export CIBW_BUILD="cp3?-* pp3?-"
-    - export CIBW_SKIP="cp35-*"
     - lib_travis after_success
     - lib_travis deploy
 
