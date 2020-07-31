@@ -1,4 +1,4 @@
-Version 0.0.1 as of 2020-07-31, see Changelog_
+Version 0.0.1 as of 2020-07-31, see changelog_
 
 =======================================================
 
@@ -260,6 +260,8 @@ License
 This software is licensed under the `MIT license <http://en.wikipedia.org/wiki/MIT_License>`_
 
 ---
+
+.. _changelog:
 
 Changelog
 =========
