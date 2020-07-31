@@ -59,14 +59,22 @@ os:
   - osx
 
 stages:
-  - name: install
+  - name: install linux
+    if: os = linux
+  - name: install osx
+    if: os = osx
   - name: install windows	
+    if: os = windows
   - name: test
   - name: deploy
 
 jobs:
   include:
-    - stage: install
+    - stage: install linux
+      script: echo "here we are"
+    - stage: install osx
+      script: echo "here we are"
+    - stage: install windows
       script: echo "here we are"
 
    
