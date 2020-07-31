@@ -58,6 +58,14 @@ os:
 - windows
 - linux
 - osx
+  language: sh
+  name: "macOS 10.15.4"
+  osx_image: xcode11.5
+  env:
+  # on osx pip and python points to python 2.7 - therefore we have to use pip3 and python3 here
+  - cPREFIX=""                  # prefix before commands - used for wine, there the prefix is "wine"
+  - cPYTHON="python3"           # command to launch python interpreter (its different on macOs, there we need python3)
+  - cPIP="python3 -m pip"       # command to launch pip (its different on macOs, there we need pip3)
 
 jobs:
   exclude:
@@ -65,10 +73,18 @@ jobs:
     arch: ppc64le
     arch: s390x
     arch: arm64
+    python: 3.6
+    python: 3.7
+    python: 3.8-dev
+    python: pypy3
   - os: osx
     arch: ppc64le
     arch: s390x
     arch: arm64
+    python: 3.6
+    python: 3.8
+    python: 3.8-dev
+    python: pypy3
   include:
   - stage: deploy
     arch: amd64
