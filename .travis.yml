@@ -62,9 +62,13 @@ os:
 jobs:
   exclude:
   - os: windows
-    arch = ppc64le OR arch = s390x OR arch = arm64
+    arch: ppc64le
+    arch: s390x
+    arch: arm64
   - os: osx
-    arch = ppc64le OR arch = s390x OR arch = arm64
+    arch: ppc64le
+    arch: s390x
+    arch: arm64
   include:
   - stage: deploy
     arch: amd64
