@@ -1,7 +1,7 @@
 pct_python_default_test
 =======================
 
-Version v0.1.0 as of 2020-08-01, see `Changelog`_.
+Version v0.1.1 as of 2020-08-01, see `Changelog`_.
 
 
 .. include:: ./badges.rst
