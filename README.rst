@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v0.1.1 as of 2020-08-05 see `Changelog`_
+Version v0.1.1 as of 2020-08-06 see `Changelog`_
 
 |travis_build| |license| |jupyter| |pypi|
 
