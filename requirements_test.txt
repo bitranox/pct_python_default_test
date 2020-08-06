@@ -8,5 +8,4 @@ pytest-pycodestyle ; python_version >= "3.5"
 flake8
 coloredlogs
 pytest==5.4
-black
 pycodestyle
