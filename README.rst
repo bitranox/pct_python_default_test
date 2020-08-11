@@ -1,9 +1,8 @@
-Version 0.1.0 as of 2020-07-29, see changelog_
-
-=======================================================
-
 pct_python_default_test
 =======================
+
+
+Version v0.1.1 as of 2020-08-07 see `Changelog`_
 
 |travis_build| |license| |jupyter| |pypi|
 
@@ -63,9 +62,9 @@ automated tests, Travis Matrix, Documentation, Badges, etc. are managed with `Pi
 
 Python version required: 3.6.0 or newer
 
-tested on linux "bionic" with python 3.6, 3.7, 3.8, 3.8-dev, pypy3
+tested on linux "bionic" with python 3.6, 3.7, 3.8, 3.8-dev, pypy3 - architectures: amd64, ppc64le, s390x, arm64
 
-`100% code coverage <https://codecov.io/gh/bitranox/pct_python_default_test>`_, codestyle checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://travis-ci.org/bitranox/pct_python_default_test>`_, automatic daily builds and monitoring
+`100% code coverage <https://codecov.io/gh/bitranox/pct_python_default_test>`_, flake8 style checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://travis-ci.org/bitranox/pct_python_default_test>`_, automatic daily builds and monitoring
 
 ----
 
@@ -262,15 +261,19 @@ This software is licensed under the `MIT license <http://en.wikipedia.org/wiki/M
 ---
 
 Changelog
-=========
+---------
 
 - new MAJOR version for incompatible API changes,
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
 
-0.0.1
------
-YYYY-MM-DD: <some release name>
+v0.1.1
+---------
+2020-08-01: fix pypi deploy
+
+v0.1.0
+--------
+2020-07-31:
     - change1
     - change2
     - ...

@@ -13,15 +13,36 @@ env:
         - cPIP="python -m pip"
         # switch off wine fix me messages
         - WINEDEBUG=fixme-all
+
+        # PYTEST
+        - PYTEST_DO_TESTS="True" 
+
+        # FLAKE8 tests
+        - DO_FLAKE8_TESTS="True"
+
+        # MYPY tests
+        - MYPY_DO_TESTS="True"
+        - MYPY_OPTIONS="--follow-imports=normal --implicit-reexport --no-warn-unused-ignores --strict"
+        - MYPYPATH="./pct_python_default_test/3rd_party_stubs"
+
+        # coverage
+        - DO_COVERAGE="True"
+        - DO_COVERAGE_UPLOAD_CODECOV="True"
+        - DO_COVERAGE_UPLOAD_CODE_CLIMATE="True"
+
+        # package name
+        - PACKAGE_NAME="pct_python_default_test"
         # the registered CLI Command
-        - CLI_COMMAND=pct_python_default_test
+        - CLI_COMMAND="pct_python_default_test"
         # the source file for rst_include (rebuild rst file includes)
         - RST_INCLUDE_SOURCE="./.docs/README_template.rst"
         # the target file for rst_include (rebuild rst file includes)
         - RST_INCLUDE_TARGET="./README.rst"
+
         # secure environment variable
         - secure: "iNUhR4KCJWa3rfa9fQPjRRZPi3/BQFsQooxhlhb58hzYHK50vPxWYoUakdFG4ebP6I8H+2VNQq+hdc/67MTOrRt9DXlv/8SsbfyiEXpPmdaJ1v1Oi8DFJo6P9Xxj9l9/i9k+X3cT1z+ZjTnQ7Q6BNma8vgqjrHs+bIEcZbxeQnuG3Tr5jMPXhlciFSN5zsRUjOhe5gckRNauFG3cczpvOxRjIjTTrI1hgf3GDtirINrSZHZwmS9XheaXo9ml7jYzTikTSBbKJNS52cd1ViFzMhr1GcmcdVjhIfEs3n9arIfB4S+ScAFDXU2ekRjdlzYCh6ixFVQqlBUKsuZjnrO0Te/cuxDXerag8eTNC0kGKRy13bOxTNNhWbmO4YAoCLkx0a4yM5+GMHxaf9+08KkAogYTqlYn6i+34UNQ3/EIeJfCl/GTnZRfZ4WdGw9qAgZ60Fnx9TDVx9GBsfUgjk+Z32WZMyPsR7fpFO79h98gOtTFZ35Q4mF/9XNeVRf/IPPaIv74t9DYs026Jx/ip9k0UE7i914DR/KM7bfutp9oPBX7KinG419NojlvI92Kl/RqJHrMOom1pi/KskOHIklgvo9Pq4gYgTYEV/P/qwHRhq+q9mVHJmk5j1xyCgcAB+J+PFFzefiHlybZgIEawYV2vCj7iPTDCvyrCcOsq+Lz97w="  # CC_TEST_REPORTER_ID.secret
         - secure: "HN5UX5qhuVm2H9ahzNzfQ1mZhGWJTEmOb55RquDY3cLuKeO487ylqWaGTftjlMm3dopJljRsgTPQSWTT9sxwRGXje6qeQTSQ5xjQBCyk7wz8azV4YpsLMDGnUldtG/CVuaJ1ujDlA3r1M3H2vY5bZWt90+4Hu0dILzTYPyAhg+MrLIm9mSB1SLP9H0SDXNp5JM8j1zf/2eF0prXYd6safPBKUnuPcGcGIGsGX97ban39gfZc6PReqY43tLY9WuM2OdLATCxz1wqDsIGgqqF0qWqLqql7S+Th04w03GH2di9SxHDPs7mP54dYY7UyK341acuVJhZ/UlBroK6iMKG3AA6j9oVZ81vpqalMDgPKUiOUas2RXpzSwDUwAqbtk7WxuNEHWNa+4yJITeddqIwOaQrbf7+m58XTBU/9opBWb58ORx6lBvWRMgPSPYqVwRNIxmEXoMC4wYNiu3m3DJ28thoKBo1cFrHPVUG4fDhhuWdB2nC2vY5SZoYDIrr7znwom8MGju6VBDUkFRNg6ZjN26EiS8j32iy1ZSg+tNM7AUTefdlMSALsEleQqDDQeAquAw6Opb8F8qfyH33BdZ3dypjqcDg456OVR8UCs3zJi9y7OSDRyNh+AplHck0PZiWujpUMNUiYnNH9M4DQe59qtzf1hF1n4rszuFmRdc58SH8="  # PYPI_PASSWORD.secret
+
 
 
 addons:
@@ -33,11 +54,11 @@ addons:
 services:   			# start services
   - xvfb    			# is needed for WINE on headless installation
 
-
 matrix:
     include:
 
     - os: windows
+      if: true
       language: sh
       name: "Windows Python 3.8"
 
@@ -51,59 +72,111 @@ matrix:
           - chmod -R +x /usr/local/lib_bash/*.sh
           - /usr/local/lib_bash/lib_retry.sh retry choco install python3
           - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+          - export BUILD_DOCS="False"
+          - export DEPLOY_SDIST="False"
+          - export DEPLOY_WHEEL="False"
+          - export DEPLOY_TEST="False"
+          - export MYPY_DO_TESTS="True"
 
 
     - os: linux
+      arch: "amd64"
+      if: true
       language: python
       python: "3.6"
       before_install:
-          - export MYPY_STRICT="True"
           - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="False"
-          - export DEPLOY="False"
-
+          - export DEPLOY_SDIST="True"
+          - export DEPLOY_WHEEL="True"
+          - export BUILD_TEST="True"
+          - export MYPY_DO_TESTS="True"
 
     - os: linux
+      arch: "amd64"
+      if: true
       language: python
       python: "3.7"
       before_install:
-          - export MYPY_STRICT="True"
           - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="False"
-          - export DEPLOY="False"
-
+          - export DEPLOY_SDIST="True"
+          - export DEPLOY_WHEEL="False"
+          - export BUILD_TEST="True"
+          - export MYPY_DO_TESTS="True"
 
     - os: linux
+      arch: "amd64"
+      if: true
       language: python
       python: "3.8"
       before_install:
-          - export MYPY_STRICT="True"
           - export BUILD_DOCS="True"
-          - export DEPLOY_CHECK="True"
-          - export DEPLOY="True"
-
+          - export DEPLOY_SDIST="True"
+          - export DEPLOY_WHEEL="True"
+          - export BUILD_TEST="True"
+          - export MYPY_DO_TESTS="True"
 
     - os: linux
+      arch: "amd64"
+      if: true
       language: python
       python: "3.8-dev"
       before_install:
-          - export MYPY_STRICT="True"
           - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="False"
-          - export DEPLOY="False"
-
+          - export DEPLOY_SDIST="True"
+          - export DEPLOY_WHEEL="True"
+          - export BUILD_TEST="True"
+          - export MYPY_DO_TESTS="True"
 
     - os: linux
+      arch: "amd64"
+      if: true
       language: python
       python: "pypy3"
       before_install:
-          - export MYPY_STRICT="False"
           - export BUILD_DOCS="False"
-          - export DEPLOY_CHECK="False"
-          - export DEPLOY="False"
+          - export DEPLOY_SDIST="True"
+          - export DEPLOY_WHEEL="True"
+          - export BUILD_TEST="True"
+          - export MYPY_DO_TESTS="False"
 
+    - os: linux
+      arch: "ppc64le"
+      if: tag IS present
+      language: python
+      python: "3.8"
+      before_install:
+          - export BUILD_DOCS="False"
+          - export DEPLOY_SDIST="True"
+          - export DEPLOY_WHEEL="True"
+          - export BUILD_TEST="True"
+          - export MYPY_DO_TESTS="True"
+
+    - os: linux
+      arch: "s390x"
+      if: tag IS present
+      language: python
+      python: "3.8"
+      before_install:
+          - export BUILD_DOCS="False"
+          - export DEPLOY_SDIST="True"
+          - export DEPLOY_WHEEL="True"
+          - export BUILD_TEST="True"
+          - export MYPY_DO_TESTS="True"
+
+    - os: linux
+      arch: "arm64"
+      if: tag IS present
+      language: python
+      python: "3.8"
+      before_install:
+          - export BUILD_DOCS="False"
+          - export DEPLOY_SDIST="True"
+          - export DEPLOY_WHEEL="True"
+          - export BUILD_TEST="True"
+          - export MYPY_DO_TESTS="True"
 
     - os: osx
+      if: true
       language: sh
       name: "macOS 10.15.4"
       python: "3.8"
@@ -113,6 +186,11 @@ matrix:
         - cPREFIX=""				# prefix before commands - used for wine, there the prefix is "wine"
         - cPYTHON="python3"			# command to launch python interpreter (its different on macOs, there we need python3)
         - cPIP="python3 -m pip"   	# command to launch pip (its different on macOs, there we need pip3)
+        - export BUILD_DOCS="False"
+        - export DEPLOY_SDIST="False"
+        - export DEPLOY_WHEEL="False"
+        - export DEPLOY_TEST="True"
+        - export MYPY_DO_TESTS="True"
 
 
 install:
@@ -128,6 +206,7 @@ script:
 after_success:
     - lib_travis after_success
     - lib_travis deploy
+    - ls -l ./dist
 
 notifications:
   email:
