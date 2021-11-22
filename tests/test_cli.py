@@ -8,9 +8,7 @@ logger = logging.getLogger()
 package_dir = "pct_python_default_test"
 cli_filename = "pct_python_default_test_cli.py"
 
-path_cli_command = (
-    pathlib.Path(__file__).resolve().parent.parent / package_dir / cli_filename
-)
+path_cli_command = pathlib.Path(__file__).resolve().parent.parent / package_dir / cli_filename
 
 
 def call_cli_command(commandline_args: str = "") -> bool:

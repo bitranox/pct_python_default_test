@@ -2,21 +2,23 @@ pct_python_default_test
 =======================
 
 
-Version v0.1.1 as of 2020-08-07 see `Changelog`_
+Version v0.1.1 as of 2021-11-22 see `Changelog`_
 
-|travis_build| |license| |jupyter| |pypi|
+|build_badge| |license| |jupyter| |pypi| |black|
 
 |codecov| |better_code| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
 
 
-.. |travis_build| image:: https://img.shields.io/travis/bitranox/pct_python_default_test/master.svg
-   :target: https://travis-ci.org/bitranox/pct_python_default_test
+
+.. |build_badge| image:: https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml/badge.svg
+   :target: https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml
+
 
 .. |license| image:: https://img.shields.io/github/license/webcomics/pywine.svg
    :target: http://en.wikipedia.org/wiki/MIT_License
 
 .. |jupyter| image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/bitranox/pct_python_default_test/master?filepath=pct_python_default_test.ipynb
+   :target: https://mybinder.org/v2/gh/bitranox/pct_python_default_test/master?filepath=pct_python_default_test.ipynb
 
 .. for the pypi status link note the dashes, not the underscore !
 .. |pypi| image:: https://img.shields.io/pypi/status/pct-python-default-test?label=PyPI%20Package
@@ -43,6 +45,9 @@ Version v0.1.1 as of 2020-08-07 see `Changelog`_
 .. |snyk| image:: https://img.shields.io/snyk/vulnerabilities/github/bitranox/pct_python_default_test
    :target: https://snyk.io/test/github/bitranox/pct_python_default_test
 
+.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
+
 This is the test project created using PizzaCutter
 
 PizzaCutter is a command-line utility that creates and updates software projects in any language from PizzaCutter project templates.
@@ -62,9 +67,9 @@ automated tests, Travis Matrix, Documentation, Badges, etc. are managed with `Pi
 
 Python version required: 3.6.0 or newer
 
-tested on linux "bionic" with python 3.6, 3.7, 3.8, 3.8-dev, pypy3 - architectures: amd64, ppc64le, s390x, arm64
+tested on recent linux with python 3.6, 3.7, 3.8, 3.9, 3.10.0, pypy-3.8 - architectures: amd64
 
-`100% code coverage <https://codecov.io/gh/bitranox/pct_python_default_test>`_, flake8 style checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://travis-ci.org/bitranox/pct_python_default_test>`_, automatic daily builds and monitoring
+`100% code coverage <https://codecov.io/gh/bitranox/pct_python_default_test>`_, flake8 style checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml>`_, automatic daily builds and monitoring
 
 ----
 
@@ -128,7 +133,7 @@ Usage
 Usage from Commandline
 ------------------------
 
-.. code-block:: bash
+.. code-block::
 
    Usage: pct_python_default_test [OPTIONS] COMMAND [ARGS]...
 
@@ -149,40 +154,28 @@ Installation and Upgrade
 - Before You start, its highly recommended to update pip and setup tools:
 
 
-.. code-block:: bash
+.. code-block::
 
     python -m pip --upgrade pip
     python -m pip --upgrade setuptools
-    python -m pip --upgrade wheel
 
 - to install the latest release from PyPi via pip (recommended):
 
-.. code-block:: bash
+.. code-block::
 
-    # install latest release from PyPi
     python -m pip install --upgrade pct_python_default_test
 
-    # test latest release from PyPi without installing (can be skipped)
-    python -m pip install pct_python_default_test --install-option test
-
-- to install the latest development version from github via pip:
+- to install the latest version from github via pip:
 
 
-.. code-block:: bash
+.. code-block::
 
-    # normal install
     python -m pip install --upgrade git+https://github.com/bitranox/pct_python_default_test.git
-
-    # to test without installing (can be skipped)
-    python -m pip install git+https://github.com/bitranox/pct_python_default_test.git --install-option test
-
-    # to install and upgrade all dependencies regardless of version number
-    python -m pip install --upgrade git+https://github.com/bitranox/pct_python_default_test.git --upgrade-strategy eager
 
 
 - include it into Your requirements.txt:
 
-.. code-block:: bash
+.. code-block::
 
     # Insert following line in Your requirements.txt:
     # for the latest Release on pypi:
@@ -195,19 +188,13 @@ Installation and Upgrade
     python -m pip install --upgrade -r /<path>/requirements.txt
 
 
-
 - to install the latest development version from source code:
 
-.. code-block:: bash
+.. code-block::
 
     # cd ~
     $ git clone https://github.com/bitranox/pct_python_default_test.git
     $ cd pct_python_default_test
-
-    # to test without installing (can be skipped)
-    python setup.py test
-
-    # normal install
     python setup.py install
 
 - via makefile:
