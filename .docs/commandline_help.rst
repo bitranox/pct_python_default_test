@@ -1,4 +1,4 @@
-.. code-block:: bash
+.. code-block::
 
    Usage: pct_python_default_test [OPTIONS] COMMAND [ARGS]...
 

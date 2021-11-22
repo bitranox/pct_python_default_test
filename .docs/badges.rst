@@ -1,16 +1,18 @@
-|travis_build| |license| |jupyter| |pypi|
+|build_badge| |license| |jupyter| |pypi| |black|
 
 |codecov| |better_code| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
 
 
-.. |travis_build| image:: https://img.shields.io/travis/bitranox/pct_python_default_test/master.svg
-   :target: https://travis-ci.org/bitranox/pct_python_default_test
+
+.. |build_badge| image:: https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml/badge.svg
+   :target: https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml
+
 
 .. |license| image:: https://img.shields.io/github/license/webcomics/pywine.svg
    :target: http://en.wikipedia.org/wiki/MIT_License
 
 .. |jupyter| image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/bitranox/pct_python_default_test/master?filepath=pct_python_default_test.ipynb
+   :target: https://mybinder.org/v2/gh/bitranox/pct_python_default_test/master?filepath=pct_python_default_test.ipynb
 
 .. for the pypi status link note the dashes, not the underscore !
 .. |pypi| image:: https://img.shields.io/pypi/status/pct-python-default-test?label=PyPI%20Package
@@ -36,3 +38,6 @@
 
 .. |snyk| image:: https://img.shields.io/snyk/vulnerabilities/github/bitranox/pct_python_default_test
    :target: https://snyk.io/test/github/bitranox/pct_python_default_test
+
+.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
