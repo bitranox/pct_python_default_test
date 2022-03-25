@@ -5,6 +5,10 @@ Changelog
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
 
+v1.0.0
+---------
+2022-03-25: remove listdir of ./dist, moved to lib_cicd_github
+
 v0.1.1
 ---------
 2020-08-01: fix pypi deploy

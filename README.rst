@@ -2,9 +2,9 @@ pct_python_default_test
 =======================
 
 
-Version v0.1.1 as of 2021-11-22 see `Changelog`_
+Version v1.0.0 as of 2022-03-25 see `Changelog`_
 
-|build_badge| |license| |jupyter| |pypi| |black|
+|build_badge| |license| |jupyter| |black|
 
 |codecov| |better_code| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
 
@@ -47,6 +47,10 @@ Version v0.1.1 as of 2021-11-22 see `Changelog`_
 
 .. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black
+
+.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/pct-python-default-test
+   :target: https://pypi.org/project/pct-python-default-test/
+   :alt: PyPI - Downloads
 
 This is the test project created using PizzaCutter
 
@@ -159,11 +163,8 @@ Installation and Upgrade
     python -m pip --upgrade pip
     python -m pip --upgrade setuptools
 
-- to install the latest release from PyPi via pip (recommended):
 
-.. code-block::
 
-    python -m pip install --upgrade pct_python_default_test
 
 - to install the latest version from github via pip:
 
@@ -178,9 +179,6 @@ Installation and Upgrade
 .. code-block::
 
     # Insert following line in Your requirements.txt:
-    # for the latest Release on pypi:
-    pct_python_default_test
-
     # for the latest development version :
     pct_python_default_test @ git+https://github.com/bitranox/pct_python_default_test.git
 
@@ -227,7 +225,7 @@ following modules will be automatically installed :
 
     ## Project Requirements
     click
-    cli_exit_tools @ git+https://github.com/bitranox/cli_exit_tools.git
+    cli_exit_tools
 
 Acknowledgements
 ----------------
@@ -253,6 +251,10 @@ Changelog
 - new MAJOR version for incompatible API changes,
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
+
+v1.0.0
+---------
+2022-03-25: remove listdir of ./dist, moved to lib_cicd_github
 
 v0.1.1
 ---------
