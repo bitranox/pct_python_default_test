@@ -7,7 +7,7 @@
     python -m pip --upgrade setuptools
 
 
-.. include:: ./installation_via_pypi.rst
+
 
 - to install the latest version from github via pip:
 
@@ -22,9 +22,6 @@
 .. code-block::
 
     # Insert following line in Your requirements.txt:
-    # for the latest Release on pypi:
-    pct_python_default_test
-
     # for the latest development version :
     pct_python_default_test @ git+https://github.com/bitranox/pct_python_default_test.git
 
