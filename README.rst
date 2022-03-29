@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.0 as of 2022-03-25 see `Changelog`_
+Version v1.0.1 as of 2022-03-29 see `Changelog`_
 
 |build_badge| |license| |jupyter| |black|
 
@@ -251,6 +251,10 @@ Changelog
 - new MAJOR version for incompatible API changes,
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
+
+v1.0.1
+--------
+2022-03-29: remedy mypy Untyped decorator makes function "cli_info" untyped
 
 v1.0.0
 ---------
