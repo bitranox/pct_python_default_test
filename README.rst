@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.1 as of 2022-05-20 see `Changelog`_
+Version v1.0.2 as of 2022-05-20 see `Changelog`_
 
 |build_badge| |license| |jupyter| |black|
 
@@ -251,6 +251,10 @@ Changelog
 - new MAJOR version for incompatible API changes,
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
+
+v1.0.2
+--------
+2022-05-20: update github actions test matrix to python 3.10
 
 v1.0.1
 --------
