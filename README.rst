@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.1 as of 2022-04-27 see `Changelog`_
+Version v1.0.1 as of 2022-05-20 see `Changelog`_
 
 |build_badge| |license| |jupyter| |black|
 
@@ -71,7 +71,7 @@ automated tests, Travis Matrix, Documentation, Badges, etc. are managed with `Pi
 
 Python version required: 3.6.0 or newer
 
-tested on recent linux with python 3.6, 3.7, 3.8, 3.9, 3.10.0, pypy-3.8 - architectures: amd64
+tested on recent linux with python 3.6, 3.7, 3.8, 3.9, 3.10, pypy-3.8 - architectures: amd64
 
 `100% code coverage <https://codecov.io/gh/bitranox/pct_python_default_test>`_, flake8 style checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml>`_, automatic daily builds and monitoring
 
