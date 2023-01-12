@@ -73,8 +73,7 @@ jobs:
           # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-software
           # https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#available-versions-of-python-and-pypy
 
-
-            - os: windows-latest
+          - os: windows-latest
             python-version: "3.11"
             env:
               cEXPORT: "SET"
