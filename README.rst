@@ -2,11 +2,11 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.2 as of 2022-05-20 see `Changelog`_
+Version v1.0.2 as of 2023-01-13 see `Changelog`_
 
 |build_badge| |license| |jupyter| |black|
 
-|codecov| |better_code| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
+|codecov| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
 
 
 
@@ -26,9 +26,6 @@ Version v1.0.2 as of 2022-05-20 see `Changelog`_
 
 .. |codecov| image:: https://img.shields.io/codecov/c/github/bitranox/pct_python_default_test
    :target: https://codecov.io/gh/bitranox/pct_python_default_test
-
-.. |better_code| image:: https://bettercodehub.com/edge/badge/bitranox/pct_python_default_test?branch=master
-   :target: https://bettercodehub.com/results/bitranox/pct_python_default_test
 
 .. |cc_maintain| image:: https://img.shields.io/codeclimate/maintainability-percentage/bitranox/pct_python_default_test?label=CC%20maintainability
    :target: https://codeclimate.com/github/bitranox/pct_python_default_test/maintainability
@@ -71,7 +68,7 @@ automated tests, Travis Matrix, Documentation, Badges, etc. are managed with `Pi
 
 Python version required: 3.6.0 or newer
 
-tested on recent linux with python 3.6, 3.7, 3.8, 3.9, 3.10, pypy-3.8 - architectures: amd64
+tested on recent linux with python 3.7, 3.8, 3.9, 3.10, 3.11, pypy-3.8 - architectures: amd64
 
 `100% code coverage <https://codecov.io/gh/bitranox/pct_python_default_test>`_, flake8 style checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml>`_, automatic daily builds and monitoring
 

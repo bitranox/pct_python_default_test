@@ -1,6 +1,6 @@
 |build_badge| |license| |jupyter| |black|
 
-|codecov| |better_code| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
+|codecov| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
 
 
 
@@ -20,9 +20,6 @@
 
 .. |codecov| image:: https://img.shields.io/codecov/c/github/bitranox/pct_python_default_test
    :target: https://codecov.io/gh/bitranox/pct_python_default_test
-
-.. |better_code| image:: https://bettercodehub.com/edge/badge/bitranox/pct_python_default_test?branch=master
-   :target: https://bettercodehub.com/results/bitranox/pct_python_default_test
 
 .. |cc_maintain| image:: https://img.shields.io/codeclimate/maintainability-percentage/bitranox/pct_python_default_test?label=CC%20maintainability
    :target: https://codeclimate.com/github/bitranox/pct_python_default_test/maintainability
