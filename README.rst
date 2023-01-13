@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.2 as of 2023-01-13 see `Changelog`_
+Version v1.0.3 as of 2023-01-13 see `Changelog`_
 
 |build_badge| |license| |jupyter| |black|
 
@@ -248,6 +248,15 @@ Changelog
 - new MAJOR version for incompatible API changes,
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
+
+v1.0.3
+---------
+2023-01-13:
+    - update github actions : checkout@v3 and setup-python@v4
+    - remove "better code" badges
+    - remove python 3.6 tests
+    - add python 3.11 tests
+    - update to pypy 3.9 tests
 
 v1.0.2
 --------
