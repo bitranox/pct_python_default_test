@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.3 as of 2023-01-13 see `Changelog`_
+Version v1.0.3 as of 2023-06-26 see `Changelog`_
 
 
 .. include:: ./badges.rst
@@ -11,7 +11,7 @@ Version v1.0.3 as of 2023-01-13 see `Changelog`_
 
 ----
 
-automated tests, Travis Matrix, Documentation, Badges, etc. are managed with `PizzaCutter <https://github
+automated tests, Github Actions, Documentation, Badges, etc. are managed with `PizzaCutter <https://github
 .com/bitranox/PizzaCutter>`_ (cookiecutter on steroids)
 
 Python version required: 3.7.0 or newer
