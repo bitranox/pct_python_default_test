@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.3 as of 2023-06-26 see `Changelog`_
+Version v1.0.4 as of 2023-06-26 see `Changelog`_
 
 |build_badge| |license| |jupyter| |black|
 
@@ -248,6 +248,13 @@ Changelog
 - new MAJOR version for incompatible API changes,
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
+
+v1.0.4
+---------
+2023-06-26:
+    - correct black settings
+    - get rid of travis
+    - do not upload .egg files to pypi.org
 
 v1.0.3
 ---------
