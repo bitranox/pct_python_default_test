@@ -8,8 +8,9 @@ Changelog
 v1.0.4
 ---------
 2023-06-26:
-    - correct black settings
-    - get rid of travis
+    - update black config
+    - remove travis config
+    - remove bettercodehub config
     - do not upload .egg files to pypi.org
 
 v1.0.3
@@ -18,8 +19,8 @@ v1.0.3
     - update github actions : checkout@v3 and setup-python@v4
     - remove "better code" badges
     - remove python 3.6 tests
-    - add python 3.11 tests
-    - update to pypy 3.9 tests
+    - adding python 3.11 tests
+    - update pypy tests to 3.9
 
 v1.0.2
 --------
