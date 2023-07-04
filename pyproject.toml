@@ -1,6 +1,55 @@
 [build-system]
 requires = ['setuptools', 'setuptools-scm']
-build-backend = 'setuptools.build_meta'
+build-backend = "setuptools.build_meta"
+
+[project]
+# see: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+name = "pct_python_default_test"
+authors = [
+    {name = "put Your Name here", email = "some_email_address@gmail.com"},
+]
+description = "a pizzacutter default test project, crated with PizzaCutter and the PizzaCutter default python template"
+readme = {file = ["README.rst"], content-type = "text/x-rst"}
+requires-python = ">=3.7.0"
+keywords = [
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: pypy3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+# dependencies - former setup.cfg "install_requires"
+# see: https://setuptools.pypa.io/en/latest/userguide/dependency_management.html
+dependencies = [
+    "click",
+    "cli_exit_tools",
+]
+version = "v1.0.5b"
+
+[project.optional-dependencies]
+test = [
+    "black",
+    "codecov",
+    "coloredlogs",
+    "coverage",
+    "flake8",
+    "mypy ; platform_python_implementation != PyPy",
+    "pytest",
+    "pytest-cov",
+    "pytest-runner",
+]
+
 
 [tool.black]
 line-length = 160

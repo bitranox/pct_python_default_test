@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.5b as of 2023-07-04 see `Changelog`_
+Version v1.0.5b as of 2023-07-05 see `Changelog`_
 
 |build_badge| |license| |jupyter| |black|
 
@@ -252,6 +252,7 @@ Changelog
 v1.0.5b
 ---------
 2023-xx-xx:
+    - introduce PEP517 packaging standard
     - introduce pyproject.toml build-system
 
 v1.0.4
