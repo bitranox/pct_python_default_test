@@ -5,6 +5,11 @@ Changelog
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
 
+v1.0.5b
+---------
+2023-xx-xx:
+    - introduce pyproject.toml build-system
+
 v1.0.4
 ---------
 2023-06-26:

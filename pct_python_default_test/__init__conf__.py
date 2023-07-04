@@ -2,7 +2,7 @@
 
 name = "pct_python_default_test"
 title = "a pizzacutter default test project, crated with PizzaCutter and the PizzaCutter default python template"
-version = "v1.0.4"
+version = "v1.0.5b"
 url = "https://github.com/bitranox/pct_python_default_test"
 author = "Robert Nowotny"
 author_email = "bitranox@gmail.com"
@@ -17,7 +17,7 @@ Info for pct_python_default_test:
 
     a pizzacutter default test project, crated with PizzaCutter and the PizzaCutter default python template
 
-    Version : v1.0.4
+    Version : v1.0.5b
     Url     : https://github.com/bitranox/pct_python_default_test
     Author  : Robert Nowotny
     Email   : bitranox@gmail.com"""

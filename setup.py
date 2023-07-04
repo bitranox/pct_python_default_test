@@ -84,7 +84,7 @@ if is_deploy() and is_tagged_commit():
 
 setup_kwargs: Dict[str, Any] = dict()
 setup_kwargs["name"] = "pct_python_default_test"
-setup_kwargs["version"] = "v1.0.4"
+setup_kwargs["version"] = "v1.0.5b"
 setup_kwargs["url"] = "https://github.com/bitranox/pct_python_default_test"
 setup_kwargs["packages"] = find_packages()
 setup_kwargs["package_data"] = {"pct_python_default_test": ["py.typed", "*.pyi", "__init__.pyi"]}
