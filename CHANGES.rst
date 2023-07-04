@@ -8,6 +8,7 @@ Changelog
 v1.0.5b
 ---------
 2023-xx-xx:
+    - introduce PEP517 packaging standard
     - introduce pyproject.toml build-system
 
 v1.0.4
