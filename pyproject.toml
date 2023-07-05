@@ -9,7 +9,7 @@ authors = [
     {name = "put Your Name here", email = "some_email_address@gmail.com"},
 ]
 description = "a pizzacutter default test project, crated with PizzaCutter and the PizzaCutter default python template"
-readme = "README.rst"
+readme = {file = ["README.rst"], content-type = "text/x-rst"}
 requires-python = ">=3.7.0"
 keywords = [
 ]
