@@ -170,7 +170,6 @@ jobs:
               # Test registered CLI Command
               DO_CLI_TEST: "True"
 
-
     name: "${{ matrix.os }} Python ${{ matrix.python-version }}"
 
     steps:
