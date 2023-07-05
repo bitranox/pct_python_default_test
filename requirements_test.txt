@@ -10,3 +10,6 @@ mypy ; platform_python_implementation != "PyPy"
 pytest
 pytest-cov
 pytest-runner
+readme_renderer
+twine
+wheel
