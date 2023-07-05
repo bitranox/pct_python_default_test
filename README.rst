@@ -254,6 +254,10 @@ v1.0.5b
 2023-xx-xx:
     - introduce PEP517 packaging standard
     - introduce pyproject.toml build-system
+    - remove mypy.ini
+    - remove pytest.ini
+    - remove setup.cfg
+    - remove setup.py
 
 v1.0.4
 ---------
