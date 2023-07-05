@@ -11,5 +11,3 @@ pytest
 pytest-cov
 pytest-runner
 readme_renderer
-twine
-wheel

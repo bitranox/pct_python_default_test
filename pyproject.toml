@@ -36,6 +36,8 @@ dependencies = [
     "cli_exit_tools",
 ]
 version = "v1.0.5b"
+zip_save = false
+url = "https://github.com/bitranox/pct_python_default_test"
 
 [project.optional-dependencies]
 test = [
@@ -49,12 +51,17 @@ test = [
     "pytest-cov",
     "pytest-runner",
     "readme_renderer",
-    "twine",
-    "wheel",
 ]
 
 [project.scripts]
     pct_python_default_test = "pct_python_default_test.pct_python_default_test_cli:cli_main"
+
+[tool.setuptools.package-data]
+pct_python_default_test = [
+    "py.typed",
+    "*.pyi",
+    "__init__.pyi",
+]
 
 [tool.black]
 line-length = 160
