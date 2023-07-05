@@ -49,6 +49,8 @@ test = [
     "pytest-cov",
     "pytest-runner",
     "readme_renderer",
+    "twine",
+    "wheel",
 ]
 
 [project.scripts]
