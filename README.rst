@@ -39,7 +39,7 @@ Version v1.0.5b as of 2023-07-05 see `Changelog`_
    :target: https://codeclimate.com/github/bitranox/pct_python_default_test/test_coverage
    :alt: Code Coverage
 
-.. |snyk| image:: https://img.shields.io/snyk/vulnerabilities/github/bitranox/pct_python_default_test
+.. |snyk| image:: https://snyk.io/test/github/bitranox/pct_python_default_test/badge.svg
    :target: https://snyk.io/test/github/bitranox/pct_python_default_test
 
 .. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
