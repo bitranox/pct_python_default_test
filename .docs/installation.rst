@@ -29,14 +29,14 @@
     python -m pip install --upgrade -r /<path>/requirements.txt
 
 
-- to install the latest development version from source code:
+- to install the latest development version, including test dependencies from source code:
 
 .. code-block::
 
     # cd ~
     $ git clone https://github.com/bitranox/pct_python_default_test.git
     $ cd pct_python_default_test
-    python setup.py install
+    python -m pip install -e .[test]
 
 
 .. include:: ./installation_via_makefile.rst
