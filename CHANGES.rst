@@ -14,6 +14,9 @@ v1.0.5b
     - remove pytest.ini
     - remove setup.cfg
     - remove setup.py
+    - remove .bettercodehub.yml
+    - remove .travis.yml
+    - update black config
 
 v1.0.4
 ---------
