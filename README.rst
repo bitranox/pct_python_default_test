@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.5b as of 2023-07-11 see `Changelog`_
+Version v1.0.5b as of 2023-07-12 see `Changelog`_
 
 |build_badge| |license| |jupyter| |black|
 
@@ -258,6 +258,10 @@ v1.0.5b
     - remove pytest.ini
     - remove setup.cfg
     - remove setup.py
+    - remove .bettercodehub.yml
+    - remove .travis.yml
+    - update black config
+    - clean ./tests/test_cli.py
 
 v1.0.4
 ---------

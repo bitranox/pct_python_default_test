@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 # see: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 name = "pct_python_default_test"
 authors = [
-    {name = "put Your Name here", email = "some_email_address@gmail.com"},
+    {name = "Robert Nowotny", email = "bitranox@gmail.com"},
 ]
 description = "a pizzacutter default test project, crated with PizzaCutter and the PizzaCutter default python template"
 readme = "README.rst"
@@ -21,12 +21,6 @@ classifiers = [
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: Implementation :: PyPy",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 # dependencies - former setup.cfg "install_requires"
