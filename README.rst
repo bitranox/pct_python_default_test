@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.5b as of 2023-07-12 see `Changelog`_
+Version v1.0.6 as of 2023-07-13 see `Changelog`_
 
 |build_badge| |license| |jupyter| |black|
 
@@ -66,9 +66,9 @@ More Information can be found here :
 automated tests, Github Actions, Documentation, Badges, etc. are managed with `PizzaCutter <https://github
 .com/bitranox/PizzaCutter>`_ (cookiecutter on steroids)
 
-Python version required: 3.7.0 or newer
+Python version required: 3.8.0 or newer
 
-tested on recent linux with python 3.7, 3.8, 3.9, 3.10, 3.11, pypy-3.9 - architectures: amd64
+tested on recent linux with python 3.8, 3.9, 3.10, 3.11, pypy-3.9 - architectures: amd64
 
 `100% code coverage <https://codeclimate.com/github/bitranox/pct_python_default_test/test_coverage>`_, flake8 style checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml>`_, automatic daily builds and monitoring
 
@@ -249,7 +249,13 @@ Changelog
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
 
-v1.0.5b
+v1.0.6
+---------
+2023-07-13:
+    - require minimum python 3.8
+    - remove python 3.7 tests
+
+v1.0.5
 ---------
 2023-xx-xx:
     - introduce PEP517 packaging standard
