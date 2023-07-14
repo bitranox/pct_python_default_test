@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.7b as of 2023-07-14 see `Changelog`_
+Version v1.0.7 as of 2023-07-14 see `Changelog`_
 
 |build_badge| |codeql| |license| |jupyter|
 |black|
@@ -253,14 +253,13 @@ Changelog
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
 
-v1.0.7b
+v1.0.7
 ---------
 2023-07-14:
     - add codeql badge
     - move 3rd_party_stubs outside the src directory
     - add pypy 3.10 tests
     - add python 3.12-dev tests
-    - unify ENV Parameter Names in Github Actions
 
 v1.0.6
 ---------
