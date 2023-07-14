@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.7 as of 2023-07-14 see `Changelog`_
+Version v1.0.8 as of 2023-07-14 see `Changelog`_
 
 |build_badge| |codeql| |license| |jupyter|
 |black| |codecov| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
@@ -250,6 +250,11 @@ Changelog
 - new MAJOR version for incompatible API changes,
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
+
+v1.0.8
+---------
+2023-07-14:
+    - move 3rd_party_stubs directory to ``./.3rd_party_stubs``
 
 v1.0.7
 ---------
