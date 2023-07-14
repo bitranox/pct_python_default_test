@@ -9,7 +9,7 @@
    :target: https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml
 
 
-.. |codeql| image:: https://github.com/bitranox/pct_python_default_test/actions/workflows/codeql-analysis.yml/badge.svg
+.. |codeql| image:: https://github.com/bitranox/pct_python_default_test/actions/workflows/codeql-analysis.yml/badge.svg?event=push
    :target: https://github.com//bitranox/pct_python_default_test/actions/workflows/codeql-analysis.yml
 
 .. |license| image:: https://img.shields.io/github/license/webcomics/pywine.svg
