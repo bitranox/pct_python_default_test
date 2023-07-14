@@ -8,6 +8,7 @@ Changelog
 v1.0.7b
 ---------
 2023-07-14:
+    - add codeql badge
     - move 3rd_party_stubs outside the src directory
     - add pypy 3.10 tests
     - add python 3.12-dev tests

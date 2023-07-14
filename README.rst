@@ -4,7 +4,8 @@ pct_python_default_test
 
 Version v1.0.7b as of 2023-07-14 see `Changelog`_
 
-|build_badge| |license| |jupyter| |black|
+|build_badge| |codeql| |license| |jupyter|
+|black|
 
 |codecov| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
 
@@ -13,6 +14,9 @@ Version v1.0.7b as of 2023-07-14 see `Changelog`_
 .. |build_badge| image:: https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml/badge.svg
    :target: https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml
 
+
+.. |codeql| image:: https://github.com/bitranox/pct_python_default_test/actions/workflows/codeql-analysis/badge.svg
+   :target: https://github.com//bitranox/pct_python_default_test/actions/workflows/codeql-analysis.yml
 
 .. |license| image:: https://img.shields.io/github/license/webcomics/pywine.svg
    :target: http://en.wikipedia.org/wiki/MIT_License
@@ -252,6 +256,7 @@ Changelog
 v1.0.7b
 ---------
 2023-07-14:
+    - add codeql badge
     - move 3rd_party_stubs outside the src directory
     - add pypy 3.10 tests
     - add python 3.12-dev tests
