@@ -5,9 +5,7 @@ pct_python_default_test
 Version v1.0.7 as of 2023-07-14 see `Changelog`_
 
 |build_badge| |codeql| |license| |jupyter|
-|black|
-
-|codecov| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
+|black| |codecov| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
 
 
 
