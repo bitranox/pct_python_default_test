@@ -20,7 +20,10 @@
 .. |pypi| image:: https://img.shields.io/pypi/status/pct-python-default-test?label=PyPI%20Package
    :target: https://badge.fury.io/py/pct_python_default_test
 
-.. |codecov| image:: https://img.shields.io/codecov/c/github/bitranox/pct_python_default_test
+.. badge until 2023-10-08:
+.. https://img.shields.io/codecov/c/github/bitranox/pct_python_default_test
+.. badge from 2023-10-08:
+.. |codecov| image:: https://codecov.io/gh/bitranox/pct_python_default_test/graph/badge.svg
    :target: https://codecov.io/gh/bitranox/pct_python_default_test
 
 .. |cc_maintain| image:: https://img.shields.io/codeclimate/maintainability-percentage/bitranox/pct_python_default_test?label=CC%20maintainability

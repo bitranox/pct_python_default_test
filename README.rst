@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.8 as of 2023-07-20 see `Changelog`_
+Version v1.0.9 as of 2024-01-11 see `Changelog`_
 
 |build_badge| |codeql| |license| |jupyter|
 |black| |codecov| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
@@ -26,7 +26,10 @@ Version v1.0.8 as of 2023-07-20 see `Changelog`_
 .. |pypi| image:: https://img.shields.io/pypi/status/pct-python-default-test?label=PyPI%20Package
    :target: https://badge.fury.io/py/pct_python_default_test
 
-.. |codecov| image:: https://img.shields.io/codecov/c/github/bitranox/pct_python_default_test
+.. badge until 2023-10-08:
+.. https://img.shields.io/codecov/c/github/bitranox/pct_python_default_test
+.. badge from 2023-10-08:
+.. |codecov| image:: https://codecov.io/gh/bitranox/pct_python_default_test/graph/badge.svg
    :target: https://codecov.io/gh/bitranox/pct_python_default_test
 
 .. |cc_maintain| image:: https://img.shields.io/codeclimate/maintainability-percentage/bitranox/pct_python_default_test?label=CC%20maintainability
@@ -70,7 +73,7 @@ automated tests, Github Actions, Documentation, Badges, etc. are managed with `P
 
 Python version required: 3.8.0 or newer
 
-tested on recent linux with python 3.8, 3.9, 3.10, 3.11, 3.12-dev, pypy-3.9, pypy-3.10 - architectures: amd64
+tested on recent linux with python 3.8, 3.9, 3.10, 3.11, 3.12, 3.13-dev, pypy-3.9, pypy-3.10 - architectures: amd64
 
 `100% code coverage <https://codeclimate.com/github/bitranox/pct_python_default_test/test_coverage>`_, flake8 style checking ,mypy static type checking ,tested under `Linux, macOS, Windows <https://github.com/bitranox/pct_python_default_test/actions/workflows/python-package.yml>`_, automatic daily builds and monitoring
 
@@ -250,6 +253,14 @@ Changelog
 - new MAJOR version for incompatible API changes,
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
+
+v1.0.9
+---------
+2024-01-11:
+    - add python 3.13-dev test
+    - add black 3.12 style
+    - set osx version to 3.12
+    - set windows version to 3.12
 
 v1.0.8
 ---------

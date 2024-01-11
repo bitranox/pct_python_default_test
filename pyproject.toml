@@ -26,10 +26,10 @@ classifiers = [
 # dependencies - former setup.cfg "install_requires"
 # see: https://setuptools.pypa.io/en/latest/userguide/dependency_management.html
 dependencies = [
-    "click",
     "cli_exit_tools",
+    "click",
 ]
-version = "v1.0.8"
+version = "v1.0.9"
 # seems to be not allowed anymore
 # zip-save = false
 
@@ -58,15 +58,15 @@ test = [
 
 [tool.setuptools.package-data]
 pct_python_default_test = [
-    "py.typed",
     "*.pyi",
     "__init__.pyi",
+    "py.typed",
 ]
 
 [tool.black]
 line-length = 160
 #You should include all Python versions that you want your code to run under
-target-version = ['py37', 'py38', 'py39', 'py310', 'py311']
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
 # Note that you have to use single-quoted strings in TOML for regular expressions
 include = '\.pyi?$'
 exclude = '/(\.eggs|\.git|\.hg|\.mypy_cache|\.nox|\.tox|\.venv|_build|buck-out|build|dist)/'

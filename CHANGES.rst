@@ -5,6 +5,14 @@ Changelog
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
 
+v1.0.9
+---------
+2024-01-11:
+    - add python 3.13-dev test
+    - add black 3.12 style
+    - set osx version to 3.12
+    - set windows version to 3.12
+
 v1.0.8
 ---------
 2023-07-14:
