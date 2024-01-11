@@ -8,7 +8,6 @@ Changelog
 v1.0.9
 ---------
 2024-01-11:
-    - add python 3.13-dev test
     - add black 3.12 style
     - set osx version to 3.12
     - set windows version to 3.12
