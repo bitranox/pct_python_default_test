@@ -5,6 +5,11 @@ Changelog
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
 
+v1.0.10
+---------
+2024-01-20:
+    - add additional Environment Variables in Github Actions
+
 v1.0.9
 ---------
 2024-01-11:
