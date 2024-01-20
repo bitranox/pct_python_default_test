@@ -2,7 +2,7 @@ pct_python_default_test
 =======================
 
 
-Version v1.0.9 as of 2024-01-11 see `Changelog`_
+Version v1.0.10 as of 2024-01-20 see `Changelog`_
 
 |build_badge| |codeql| |license| |jupyter|
 |black| |codecov| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
@@ -253,6 +253,11 @@ Changelog
 - new MAJOR version for incompatible API changes,
 - new MINOR version for added functionality in a backwards compatible manner
 - new PATCH version for backwards compatible bug fixes
+
+v1.0.10
+---------
+2024-01-20:
+    - add additional Environment Variables in Github Actions
 
 v1.0.9
 ---------
