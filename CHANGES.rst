@@ -61,7 +61,7 @@ v1.0.4
 v1.0.3
 ---------
 2023-01-13:
-    - update github actions : checkout@v3 and setup-python@v4
+    - update github actions : checkout@v3 and setup-python@v6
     - remove "better code" badges
     - remove python 3.6 tests
     - adding python 3.11 tests
